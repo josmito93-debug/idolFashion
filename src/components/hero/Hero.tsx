@@ -32,7 +32,7 @@ export const Hero = () => {
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
            className="flex flex-col items-center"
         >
-          <h1 className="text-6xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-tight md:leading-[0.8]">
+          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-tight md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
           <h2 className="brand-text mt-4 tracking-[0.5em] opacity-80 text-sm md:text-base">
