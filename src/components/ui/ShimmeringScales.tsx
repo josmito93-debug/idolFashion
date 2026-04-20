@@ -6,18 +6,18 @@ import { motion } from 'framer-motion'
 export const ShimmeringScales = () => {
   // Generate a set of tiny "scales" with random positions and animation properties
   const scales = useMemo(() => {
-    return Array.from({ length: 40 }).map((_, i) => ({
+    return Array.from({ length: 60 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 5
+      size: Math.random() * 1.5 + 0.5,
+      duration: Math.random() * 2 + 1.5,
+      delay: Math.random() * 3
     }))
   }, [])
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-90">
       {scales.map((scale) => (
         <motion.div
           key={scale.id}
