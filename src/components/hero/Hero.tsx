@@ -32,16 +32,16 @@ export const Hero = () => {
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
            className="flex flex-col items-center"
         >
-          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-tight md:leading-[0.8]">
+          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.7] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
-          <h2 className="brand-text mt-4 tracking-[0.5em] opacity-80 text-sm md:text-base uppercase">
-            The Elite Lab
+          <h2 className="brand-text mt-0 md:mt-4 tracking-[0.5em] opacity-80 text-[10px] md:text-base uppercase">
+            THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-4 md:gap-12 mt-8 md:mt-12 items-center">
-             <p className="max-w-md text-sm md:text-base opacity-40 leading-relaxed tracking-wider detail-text">
-                Where technical precision meets high-fashion evolution. The industry's premier development incubator.
+          <div className="flex flex-col md:flex-row gap-4 md:gap-12 mt-6 md:mt-12 items-center">
+             <p className="max-w-xs md:max-w-md text-[8px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center">
+                Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
              </p>
              
              <motion.button

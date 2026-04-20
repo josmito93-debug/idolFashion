@@ -25,33 +25,33 @@ export const CameraHUD = () => {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-40 p-6 md:p-12 flex flex-col justify-between overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-40 p-4 md:p-12 flex flex-col justify-between overflow-hidden">
       {/* Top HUD */}
       <div className="flex justify-between items-start">
-        <div className="flex gap-8">
+        <div className="flex gap-4 md:gap-8">
           <div className="flex flex-col">
-            <span className="camera-hud-text">REC</span>
-            <div className="flex items-center gap-2">
+            <span className="camera-hud-text text-[8px] md:text-xs">REC</span>
+            <div className="flex items-center gap-1 md:gap-2">
               <motion.div 
                 animate={{ opacity: [1, 0, 1] }} 
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-3 h-3 rounded-full bg-accent"
+                className="w-1.5 h-1.5 md:w-3 md:h-3 rounded-full bg-accent"
               />
-              <span className="text-xl font-mono tabular-nums leading-none">{time}</span>
+              <span className="text-xs md:text-xl font-mono tabular-nums leading-none">{time}</span>
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="camera-hud-text">STATUS</span>
-            <span className="text-xl font-mono leading-none">STBY</span>
+            <span className="camera-hud-text text-[8px] md:text-xs">STATUS</span>
+            <span className="text-xs md:text-xl font-mono leading-none">STBY</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <div className="flex flex-col items-end">
-            <span className="camera-hud-text">POWER</span>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-mono leading-none">98%</span>
-              <Battery className="w-5 h-5 text-white/50" />
+            <span className="camera-hud-text text-[8px] md:text-xs">POWER</span>
+            <div className="flex items-center gap-1 md:gap-2">
+              <span className="text-xs md:text-xl font-mono leading-none">98%</span>
+              <Battery className="w-3 h-3 md:w-5 md:h-5 text-white/50" />
             </div>
           </div>
         </div>
@@ -79,30 +79,30 @@ export const CameraHUD = () => {
 
       {/* Bottom HUD */}
       <div className="flex justify-between items-end">
-        <div className="flex gap-8">
+        <div className="flex gap-4 md:gap-8">
           <div className="flex flex-col">
-            <span className="camera-hud-text">ISO</span>
-            <span className="text-xl font-mono tabular-nums leading-none tracking-tight">{iso}</span>
+            <span className="camera-hud-text text-[8px] md:text-xs">ISO</span>
+            <span className="text-xs md:text-xl font-mono tabular-nums leading-none tracking-tight">{iso}</span>
           </div>
           <div className="flex flex-col">
-            <span className="camera-hud-text">APERTURE</span>
-            <span className="text-xl font-mono leading-none tracking-tight">f/2.8</span>
+            <span className="camera-hud-text text-[8px] md:text-xs">APERTURE</span>
+            <span className="text-xs md:text-xl font-mono leading-none tracking-tight">f/2.8</span>
           </div>
           <div className="flex flex-col">
-            <span className="camera-hud-text">SHUTTER</span>
-            <span className="text-xl font-mono leading-none tracking-tight">1/125</span>
+            <span className="camera-hud-text text-[8px] md:text-xs">SHUTTER</span>
+            <span className="text-xs md:text-xl font-mono leading-none tracking-tight">1/125</span>
           </div>
         </div>
 
         <div className="flex flex-col items-end">
-          <div className="flex gap-4">
+          <div className="flex gap-3 md:gap-4">
              <div className="flex flex-col items-end">
-                <span className="camera-hud-text">FOCAL</span>
-                <span className="text-xl font-mono leading-none tracking-tight">35mm</span>
+                <span className="camera-hud-text text-[8px] md:text-xs">FOCAL</span>
+                <span className="text-xs md:text-xl font-mono leading-none tracking-tight">35mm</span>
              </div>
              <div className="flex flex-col items-end">
-                <span className="camera-hud-text">WB</span>
-                <span className="text-xl font-mono leading-none tracking-tight">5600K</span>
+                <span className="camera-hud-text text-[8px] md:text-xs">WB</span>
+                <span className="text-xs md:text-xl font-mono leading-none tracking-tight">5600K</span>
              </div>
           </div>
         </div>
