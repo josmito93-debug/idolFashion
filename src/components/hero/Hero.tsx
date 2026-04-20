@@ -35,7 +35,7 @@ export const Hero = () => {
           <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-tight md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
-          <h2 className="brand-text mt-4 tracking-[0.5em] opacity-80 text-sm md:text-base">
+          <h2 className="brand-text mt-4 tracking-[0.5em] opacity-80 text-sm md:text-base uppercase">
             The Elite Lab
           </h2>
           
