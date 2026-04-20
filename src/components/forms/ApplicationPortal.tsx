@@ -86,7 +86,7 @@ export const ApplicationPortal = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => { setRole(r.id); handleNext(); }}
-                      className="detail-text px-6 py-3 md:px-12 md:py-6 bg-transparent border border-white/10 text-white md:bg-white md:text-black tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all z-10"
+                      className="detail-text px-4 py-2 md:px-12 md:py-6 bg-transparent border border-white/10 text-white md:bg-white md:text-black tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all z-10 text-[10px] md:text-sm"
                     >
                       Initialize Application {">"}
                     </motion.button>

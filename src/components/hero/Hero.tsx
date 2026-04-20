@@ -47,7 +47,7 @@ export const Hero = () => {
              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-black text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-colors duration-300 pointer-events-auto mt-6 md:mt-0 detail-text"
+                className="px-4 py-2 md:px-8 md:py-4 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-colors duration-300 pointer-events-auto mt-6 md:mt-0 detail-text"
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
              >
                 Initialize Application
