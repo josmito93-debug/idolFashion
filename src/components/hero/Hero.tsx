@@ -31,7 +31,7 @@ export const Hero = () => {
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-           className="flex flex-col items-center -translate-y-20 md:translate-y-0"
+           className="flex flex-col items-center -translate-y-10 md:translate-y-0"
         >
           <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
