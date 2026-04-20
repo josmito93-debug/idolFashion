@@ -58,16 +58,16 @@ export const CameraHUD = () => {
       </div>
 
       {/* Middle: Focus Brackets */}
-      <div className="absolute inset-0 flex items-center justify-center p-20">
-        <div className="relative w-full h-full max-w-[800px] max-h-[500px]">
+      <div className="absolute inset-0 flex items-center justify-center p-8 md:p-20">
+        <div className="relative w-full h-full max-w-[90%] md:max-w-[1000px] max-h-[85%] md:max-h-[600px]">
           {/* Top Left */}
-          <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-white/40" />
+          <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-t-2 border-l-2 border-white/40" />
           {/* Top Right */}
-          <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-white/40" />
+          <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-t-2 border-r-2 border-white/40" />
           {/* Bottom Left */}
-          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-white/40" />
+          <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-b-2 border-l-2 border-white/40" />
           {/* Bottom Right */}
-          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-white/40" />
+          <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-b-2 border-r-2 border-white/40" />
 
           {/* Central Crosshair */}
           <div className="absolute inset-0 flex items-center justify-center">
