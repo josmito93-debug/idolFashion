@@ -71,7 +71,7 @@ export const ApplicationPortal = () => {
                     <motion.h4 
                       initial={{ x: -50, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
-                      className="big-text brand-text text-5xl md:text-7xl lg:text-9xl transition-all duration-500 group-hover:text-accent tracking-tighter leading-[0.7]"
+                      className="big-text brand-text text-8xl md:text-[10rem] lg:text-[13rem] transition-all duration-500 group-hover:text-accent tracking-tighter leading-[0.7]"
                     >
                       {r.label}
                     </motion.h4>
