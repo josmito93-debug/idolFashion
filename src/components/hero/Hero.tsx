@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { CameraHUD } from './CameraHUD'
-import { ShimmeringScales } from '../ui/ShimmeringScales'
+import { StadiumWaveGrid } from '../ui/StadiumWaveGrid'
 
 export const Hero = () => {
   return (
@@ -48,11 +48,11 @@ export const Hero = () => {
              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-3 md:px-10 md:py-5 bg-white/5 border border-white/10 text-white text-[10px] md:text-sm tracking-widest uppercase hover:border-accent hover:text-accent transition-all duration-300 pointer-events-auto mt-6 md:mt-0 detail-text relative overflow-hidden group"
+                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto mt-6 md:mt-0 detail-text relative overflow-hidden group shadow-sm"
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
              >
                 <span className="relative z-10">Become an elite in fashion</span>
-                <ShimmeringScales />
+                <StadiumWaveGrid />
              </motion.button>
           </div>
         </motion.div>
