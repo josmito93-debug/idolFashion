@@ -6,7 +6,7 @@ import { Play, Check, ArrowRight, ShieldCheck, Zap, Sparkles, Music } from 'luci
 import { StripeButton } from '../checkout/StripeButton'
 
 const MODEL_VIDEOS = [
-  '/assets/20260411_182901.mp4',
+  '/assets/DFW 9TH PROMO 1304 b.mp4',
   '/assets/DFW 9TH PROMO 1304 c.mp4',
   '/assets/lv_0_20251013183505.mp4'
 ]
