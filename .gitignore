@@ -39,4 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/public/assets/
+# /public/assets/ — removed: assets need to be deployed to Vercel
+.env*.local
