@@ -2,14 +2,16 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Camera, User, PenTool, Scissors, CameraIcon, Briefcase } from 'lucide-react'
+import { Camera, User, PenTool, Scissors, CameraIcon, Briefcase, Paintbrush, Newspaper } from 'lucide-react'
 import { SignatureSection } from './SignatureSection'
 
 const ROLES = [
   { id: 'model', label: 'Model', icon: User, description: 'High-fashion model applicant' },
   { id: 'designer', label: 'Designer', icon: PenTool, description: 'Creative director & fashion architect' },
   { id: 'photographer', label: 'Photographer', icon: Camera, description: 'Visual storyteller & lighting expert' },
-  { id: 'staff', label: 'Staff/MUA', icon: Scissors, description: 'Backstage elite support' },
+  { id: 'makeup', label: 'Make-Up', icon: Paintbrush, description: 'Elite beauty & transformation specialist' },
+  { id: 'media', label: 'Media-Press', icon: Newspaper, description: 'Industry coverage & high-fashion news' },
+  { id: 'staff', label: 'Staff/Backstage', icon: Scissors, description: 'Backstage elite support' },
   { id: 'sponsor', label: 'Sponsor', icon: Briefcase, description: 'Strategic industry partner' },
 ]
 
@@ -40,20 +42,20 @@ export const ApplicationPortal = () => {
           </motion.button>
         )}
         
-        <div className="text-center mb-16 flex flex-col items-center">
+        <div className="text-center mb-6 md:mb-16 flex flex-col items-center">
           <motion.img 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-24 md:h-32 mb-8 object-contain"
+            className="h-12 md:h-32 mb-3 md:mb-8 object-contain"
           />
-          <h2 className="camera-hud-text mb-2 tracking-[0.2em] opacity-50">Where technical precision meets high-fashion evolution.</h2>
-          <h3 className="big-text brand-text text-3xl md:text-5xl lg:text-7xl px-4">The industry&apos;s premier development incubator.</h3>
+          <h2 className="camera-hud-text mb-1 md:mb-2 tracking-[0.2em] opacity-50 text-[8px] md:text-xs">Where technical precision meets high-fashion evolution.</h2>
+          <h3 className="big-text brand-text text-lg md:text-5xl lg:text-7xl px-4">The industry&apos;s premier development incubator.</h3>
         </div>
 
-        <div className="w-full h-1 bg-white/5 mb-12 relative">
+        <div className="w-full h-1 bg-white/5 mb-4 md:mb-12 relative">
           <motion.div 
             className="absolute top-0 left-0 h-full bg-accent"
             animate={{ width: `${(step / 3) * 100}%` }}
@@ -163,7 +165,7 @@ export const ApplicationPortal = () => {
                        <input type="text" required placeholder="@handle or url" className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
                     </div>
 
-                    {role === 'staff' && (
+                    {['staff', 'makeup', 'media'].includes(role || '') && (
                       <>
                         <div className="flex flex-col md:col-span-2">
                           <label className="camera-hud-text mb-2">Home Address / Dirección de Habitación</label>
@@ -230,7 +232,7 @@ export const ApplicationPortal = () => {
                      />
                   </div>
 
-                  {role === 'staff' && (
+                  {['staff', 'makeup', 'media'].includes(role || '') && (
                     <div className="flex flex-col pt-6 border-t border-white/10">
                       <label className="camera-hud-text mb-4">Fiscal Status / Estatus Legal-Fiscal</label>
                       <select className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none w-full">

@@ -56,10 +56,10 @@ export const SignatureSection = ({ role, onComplete }: SignatureSectionProps) =>
           </>
         ) : (
           <>
-            <p className="brand-text text-lg text-accent mb-4">REGISTRO Y ACUERDO DE COLABORACIÓN PARA STAFF - IDOL JOSE GROUP LLC</p>
+            <p className="brand-text text-lg text-accent mb-4">REGISTRO Y ACUERDO DE COLABORACIÓN PROFESIONAL - IDOL JOSE GROUP LLC</p>
             <p><span className="text-white/80">A. Confidencialidad y Lealtad:</span> El colaborador se compromete a mantener estricta confidencialidad sobre logística, bases de datos de clientes y diseños. Queda prohibida la divulgación de material interno sin autorización.</p>
-            <p><span className="text-white/80">B. Responsabilidades y Tareas:</span> El miembro del staff se compromete a cumplir con las tareas asignadas de manera responsable y puntual. El incumplimiento causará la baja inmediata.</p>
-            <p><span className="text-white/80">C. Código de Vestimenta (Dress Code):</span> El staff debe proyectar excelencia. Se compromete a seguir el Dress Code establecido (ej. Total Black, Uniforme de Staff o Editorial).</p>
+            <p><span className="text-white/80">B. Responsabilidades y Tareas:</span> El colaborador se compromete a cumplir con las tareas asignadas de manera responsable y puntual. El incumplimiento causará la baja inmediata.</p>
+            <p><span className="text-white/80">C. Código de Vestimenta (Dress Code):</span> El colaborador debe proyectar excelencia. Se compromete a seguir el Dress Code establecido (ej. Total Black, Uniforme de Staff o Editorial).</p>
             <p><span className="text-white/80">D. Uso de Imagen:</span> Autorizo a la entidad a utilizar fotografías o videos de mi persona desempeñando mis funciones para fines promocionales o memorias del evento.</p>
             <p><span className="text-white/80">E. Carácter Personal de la Relación:</span> Este registro es estrictamente personal. El colaborador actúa bajo su propia responsabilidad civil.</p>
           </>
