@@ -15,7 +15,7 @@ export default function Home() {
       {/* Footer / Copyright */}
       <footer className="py-12 border-t border-white/5 bg-brand-secondary flex flex-col items-center">
         <div className="camera-hud-text opacity-30 mb-4">Internal Protocol V.2.0.26</div>
-        <div className="big-text text-xl opacity-20">Idol Fashion : The Elite Lab</div>
+        <img src="/assets/logo.png" alt="Logo" className="h-12 opacity-30 grayscale hover:grayscale-0 transition-all mb-4" />
         <p className="font-mono text-[10px] opacity-20 mt-8 tracking-[0.4em]">© 2026 ALL RIGHTS RESERVED | MEDICAL PRECISION IN FASHION</p>
       </footer>
     </main>

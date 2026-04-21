@@ -40,7 +40,15 @@ export const ApplicationPortal = () => {
           </motion.button>
         )}
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            src="/assets/logo.png" 
+            alt="Idol Fashion Logo" 
+            className="h-24 md:h-32 mb-8 object-contain"
+          />
           <h2 className="camera-hud-text mb-2 tracking-[0.2em] opacity-50">Where technical precision meets high-fashion evolution.</h2>
           <h3 className="big-text brand-text text-3xl md:text-5xl lg:text-7xl px-4">The industry&apos;s premier development incubator.</h3>
         </div>
