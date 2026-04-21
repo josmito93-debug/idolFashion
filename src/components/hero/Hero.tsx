@@ -8,7 +8,7 @@ import { StadiumWaveGrid } from '../ui/StadiumWaveGrid'
 export const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-brand-secondary">
-      {/* Background Video */}
+      {/* Background Video - Fixed Path */}
       <video
         autoPlay
         muted
