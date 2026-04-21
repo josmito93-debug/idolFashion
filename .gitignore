@@ -41,3 +41,5 @@ yarn-error.log*
 next-env.d.ts
 # /public/assets/ — removed: assets need to be deployed to Vercel
 .env*.local
+public/assets/20260112_183955.mp4
+public/assets/20260412_134649.mp4
