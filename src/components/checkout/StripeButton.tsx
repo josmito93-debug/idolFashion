@@ -32,21 +32,14 @@ export const StripeButton = ({ productId, amount, productName }: StripeButtonPro
         }),
       });
 
-      const { sessionId, error } = await response.json();
+      const { url, error } = await response.json();
 
       if (error) {
         throw new Error(error);
       }
 
-      const stripe = await stripePromise;
-      if (stripe) {
-        const { error: redirectError } = await stripe.redirectToCheckout({
-          sessionId,
-        });
-
-        if (redirectError) {
-          console.error(redirectError);
-        }
+      if (url) {
+        window.location.href = url;
       }
     } catch (err) {
       console.error('Checkout error:', err);
