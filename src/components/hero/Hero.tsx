@@ -34,7 +34,7 @@ export const Hero = () => {
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-           className="flex flex-col items-center -translate-y-10 md:translate-y-0"
+           className="flex flex-col items-center translate-y-10 md:translate-y-0"
         >
           <motion.img 
             initial={{ opacity: 0, y: 10 }}
@@ -44,7 +44,7 @@ export const Hero = () => {
             alt="Idol Fashion Logo" 
             className="h-10 md:h-24 mb-4 md:mb-8 object-contain"
           />
-          <h1 className="text-7xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.85] md:leading-[0.8]">
+          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
           <h2 className="brand-text mt-3 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase">
@@ -52,7 +52,7 @@ export const Hero = () => {
           </h2>
           
           <div className="flex flex-col items-center gap-6 md:gap-8 mt-10 md:mt-12">
-            <p className="max-w-[260px] md:max-w-md text-[8px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium">
+            <p className="max-w-[200px] md:max-w-md text-[6px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium">
               Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
             </p>
             
