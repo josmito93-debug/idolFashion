@@ -27,20 +27,28 @@ export async function POST(req: Request) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // 3. Create user in Airtable using the EXACT field names provided
-    const newRecord = await tables.users.create([
-      {
-        fields: {
-          'user_id': email, // Primary field is email for now
-          'name': name,
-          'full_name': name,
-          'email': email,
-          'password_hash': hashedPassword,
-          'role': 'talent',
-          'status': 'Active',
-          'created_at': new Date().toISOString(),
+    // Minimal set to ensure success
+    let newRecord;
+    try {
+      newRecord = await tables.users.create([
+        {
+          fields: {
+            'user_id': email, 
+            'name': name,
+            'email': email,
+            'password_hash': hashedPassword,
+            'role': 'talent',
+          },
         },
-      },
-    ]);
+      ]);
+    } catch (airtableError: any) {
+      console.error('Airtable Create Error:', airtableError);
+      return NextResponse.json({ 
+        error: 'Airtable Protocol Failure', 
+        details: airtableError.message || JSON.stringify(airtableError),
+        errorType: airtableError.constructor.name
+      }, { status: 500 });
+    }
 
     return NextResponse.json({ 
       success: true, 
