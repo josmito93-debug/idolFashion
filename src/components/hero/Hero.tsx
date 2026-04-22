@@ -52,14 +52,14 @@ export const Hero = () => {
           </h2>
           
           <div className="flex flex-col items-center gap-6 md:gap-8 mt-10 md:mt-12">
-            <p className="text-[6px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium px-8">
+            <p className="text-[5px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium px-8">
               Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
             </p>
             
             <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative z-50 pointer-events-auto">
               <button
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-2.5 md:px-10 md:py-5 bg-white text-black text-[9px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[220px] md:min-w-[280px]"
+                className="px-4 py-2 md:px-10 md:py-5 bg-white text-black text-[9px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[200px] md:min-w-[280px]"
               >
                 <span className="relative z-10">Join the Industry</span>
                 <StadiumWaveGrid />
@@ -67,7 +67,7 @@ export const Hero = () => {
 
               <Link
                 href="/model-portfolios"
-                className="px-6 py-2.5 md:px-10 md:py-5 border border-white/20 text-white text-[9px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[220px] md:min-w-[280px] text-center"
+                className="px-4 py-2 md:px-10 md:py-5 border border-white/20 text-white text-[9px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[200px] md:min-w-[280px] text-center"
               >
                 Scale your model career
               </Link>
