@@ -51,7 +51,7 @@ export const Hero = () => {
             THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col items-center gap-6 md:gap-8 mt-10 md:mt-12 w-full">
+          <div className="flex flex-col items-center gap-3 md:gap-8 mt-4 md:mt-12 w-full">
             <div className="md:contents flex justify-center w-full">
               <p className="text-[10px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium scale-[0.5] md:scale-100 origin-center max-w-none md:max-w-md">
                 Where technical precision meets<br className="md:hidden" /> 
