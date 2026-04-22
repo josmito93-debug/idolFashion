@@ -39,26 +39,26 @@ export const EliteProducts = () => {
         </div>
 
         {/* 1. MODEL PROFESSIONAL KIT - VERTICAL VIDEO LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32 items-center">
             
             {/* Left: Content Card */}
             <motion.div 
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="lg:col-span-5 space-y-8 flex flex-col items-start text-left"
+                className="lg:col-span-5 space-y-8"
             >
                 <div>
-                    <h3 className="text-4xl md:text-5xl brand-text mb-2 text-left">Model Digital Kit</h3>
+                    <h3 className="text-4xl md:text-5xl brand-text mb-2">Model Digital Kit</h3>
                     <div className="flex items-center gap-4 py-2">
                         <span className="text-3xl brand-text text-accent">$450</span>
                         <div className="h-[20px] w-[1px] bg-white/20" />
-                        <span className="camera-hud-text text-[8px] opacity-40 uppercase tracking-widest">Two Installment Plan Available</span>
+                        <span className="camera-hud-text text-[10px] opacity-40 uppercase tracking-widest">Two Installment Plan Available</span>
                     </div>
                 </div>
 
-                <div className="space-y-4 text-left items-start flex flex-col">
-                    <p className="detail-text text-[9px] md:text-sm opacity-60 leading-relaxed uppercase tracking-widest text-left">
+                <div className="space-y-4">
+                    <p className="detail-text text-sm opacity-60 leading-relaxed uppercase tracking-widest">
                         We provide the strategic infrastructure required to secure high-tier bookings and establish a permanent, verified presence in the global fashion ecosystem.
                     </p>
                     
@@ -73,26 +73,26 @@ export const EliteProducts = () => {
                             "Personal Portfolio Website",
                             "Media-Press Professional EPK"
                         ].map((item, i) => (
-                            <div key={i} className="flex items-center gap-3 group justify-start">
+                            <div key={i} className="flex items-center gap-3 group">
                                 <div className="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform" />
-                                <span className="camera-hud-text text-[8px] md:text-[10px] opacity-70 group-hover:opacity-100 transition-opacity uppercase tracking-wider">{item}</span>
+                                <span className="camera-hud-text text-[9px] md:text-[10px] opacity-70 group-hover:opacity-100 transition-opacity uppercase tracking-wider">{item}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 flex flex-col gap-6 w-full items-start">
-                    <div className="flex items-center gap-4 p-4 rounded-lg bg-accent/5 border border-accent/10 w-full justify-start">
+                <div className="pt-6 border-t border-white/5 flex flex-col gap-6">
+                    <div className="flex items-center gap-4 p-4 rounded-lg bg-accent/5 border border-accent/10">
                         <div className="p-2 rounded-full bg-accent/20">
                             <Music className="w-5 h-5 text-accent" />
                         </div>
-                        <div className="text-left">
-                            <p className="camera-hud-text text-[8px] text-accent tracking-widest uppercase">Bonus Inclusion</p>
-                            <p className="detail-text text-[9px] opacity-80 uppercase tracking-[0.1em]">Complete "Become a Professional DJ" track included</p>
+                        <div>
+                            <p className="camera-hud-text text-[10px] text-accent tracking-widest uppercase">Bonus Inclusion</p>
+                            <p className="detail-text text-[11px] opacity-80 uppercase tracking-[0.1em]">Complete "Become a Professional DJ" track included</p>
                         </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 w-full">
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <StripeButton productId="model-kit" amount={450} productName="Model Professional Kit" />
                         <Link href="/register" className="w-full py-5 border border-white/20 camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
                             Initialize Application
@@ -164,27 +164,27 @@ export const EliteProducts = () => {
                         <source src="/assets/VID-20260413-WA0012.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-0 bg-brand-secondary/40" />
-                    <div className="absolute bottom-12 left-12 text-left items-start flex flex-col">
+                    <div className="absolute bottom-12 left-12">
                         <p className="big-text text-8xl md:text-9xl opacity-10 absolute -top-16 -left-8 pointer-events-none">DESIGN</p>
-                        <h4 className="brand-text text-5xl mb-4 text-left">Couture Scale</h4>
-                        <div className="flex items-center gap-3 justify-start">
+                        <h4 className="brand-text text-5xl mb-4">Couture Scale</h4>
+                        <div className="flex items-center gap-3">
                              <div className="h-[1px] w-8 bg-accent" />
                              <span className="camera-hud-text text-[9px] tracking-[0.3em] uppercase">International Placement</span>
                         </div>
                     </div>
                 </div>
 
-                <div className="p-8 md:p-16 flex flex-col justify-center items-start text-left">
-                    <div className="mb-8 items-start flex flex-col">
+                <div className="p-8 md:p-16 flex flex-col justify-center">
+                    <div className="mb-8">
                         <div className="flex items-baseline gap-4 mb-4">
-                            <span className="text-4xl brand-text text-white text-left">Full Production Ecosystem</span>
+                            <span className="text-4xl brand-text text-white">Full Production Ecosystem</span>
                         </div>
-                        <p className="detail-text text-[9px] md:text-sm opacity-40 uppercase tracking-widest leading-relaxed text-left">
+                        <p className="detail-text text-sm opacity-40 uppercase tracking-widest leading-relaxed">
                             We provide the manufacturing infrastructure and media placement required to launch and scale a globally recognized fashion house.
                         </p>
                     </div>
 
-                    <div className="space-y-6 mb-12 w-full">
+                    <div className="space-y-6 mb-12">
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                             {[
                                 "Garment Manufacturing (Maquilado)",
@@ -196,24 +196,24 @@ export const EliteProducts = () => {
                                 "Strategic Social Media Management",
                                 "Content Production Strategy"
                             ].map((feature, i) => (
-                                <div key={i} className="flex items-start gap-4 justify-start">
+                                <div key={i} className="flex items-start gap-4">
                                     <div className="mt-1.5 p-0.5 rounded-full bg-accent/20 border border-accent/40">
                                         <Check className="w-2.5 h-2.5 text-accent" />
                                     </div>
-                                    <span className="camera-hud-text text-[9px] md:text-[10px] opacity-70 uppercase tracking-wider text-left">{feature}</span>
+                                    <span className="camera-hud-text text-[10px] opacity-70 uppercase tracking-wider">{feature}</span>
                                 </div>
                             ))}
                          </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-6 items-center w-full">
+                    <div className="flex flex-col sm:flex-row gap-6 items-center">
                         <div className="flex-1 w-full">
                             <StripeButton productId="designer-kit" amount={450} productName="Designer Launch & Scale Kit" />
                         </div>
                         <div className="flex items-center gap-6 opacity-30">
                             <ShieldCheck className="w-5 h-5" />
                             <Zap className="w-5 h-5" />
-                            <div className="camera-hud-text text-[8px] uppercase tracking-widest text-left">Certified <br/> Elite Program</div>
+                            <div className="camera-hud-text text-[8px] uppercase tracking-widest">Certified <br/> Elite Program</div>
                         </div>
                     </div>
                 </div>

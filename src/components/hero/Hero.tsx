@@ -29,12 +29,12 @@ export const Hero = () => {
       <CameraHUD />
 
       {/* Main Content */}
-      <div className="relative z-30 h-full w-full flex flex-col items-center md:items-center justify-center px-4">
+      <div className="relative z-30 h-full w-full flex flex-col items-center justify-center text-center px-4">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-           className="flex flex-col items-start md:items-center -translate-y-10 md:translate-y-0 w-full max-w-7xl mx-auto md:px-12"
+           className="flex flex-col items-center -translate-y-10 md:translate-y-0"
         >
           <motion.img 
             initial={{ opacity: 0, y: 10 }}
@@ -42,24 +42,24 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-12 md:h-24 mb-6 object-contain"
+            className="h-16 md:h-24 mb-6 object-contain"
           />
-          <h1 className="text-7xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8] text-left md:text-center">
+          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
-          <h2 className="brand-text mt-2 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase text-left md:text-center">
+          <h2 className="brand-text mt-0 md:mt-4 tracking-[0.5em] opacity-80 text-[10px] md:text-base uppercase">
             THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col items-start md:items-center gap-8 mt-12 w-full">
-            <p className="max-w-xs md:max-w-md text-[8px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-left md:text-center">
+          <div className="flex flex-col items-center gap-8 mt-12">
+            <p className="max-w-xs md:max-w-md text-[7px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center">
               Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
             </p>
             
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start md:items-center relative z-50 pointer-events-auto w-full md:w-auto">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center relative z-50 pointer-events-auto">
               <button
                 onClick={() => document.getElementById('application-portal')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[8px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center w-full md:min-w-[280px]"
+                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
               >
                 <span className="relative z-10">Join the Industry</span>
                 <StadiumWaveGrid />
@@ -67,7 +67,7 @@ export const Hero = () => {
 
               <Link
                 href="/model-portfolios"
-                className="px-4 py-3 md:px-10 md:py-5 border border-white/20 text-white text-[8px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text w-full md:min-w-[280px] text-center md:text-center"
+                className="px-4 py-3 md:px-10 md:py-5 border border-white/20 text-white text-[10px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[280px] text-center"
               >
                 Scale your model career
               </Link>
@@ -76,7 +76,7 @@ export const Hero = () => {
             {/* Mobile Download Button */}
             <Link
               href="/login"
-              className="md:hidden mt-4 flex flex-col items-start group relative z-50 pointer-events-auto"
+              className="md:hidden mt-4 flex flex-col items-center group relative z-50 pointer-events-auto"
             >
               <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
               <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
