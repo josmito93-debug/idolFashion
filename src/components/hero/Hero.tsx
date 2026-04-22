@@ -44,15 +44,15 @@ export const Hero = () => {
             alt="Idol Fashion Logo" 
             className="h-10 md:h-24 mb-4 md:mb-6 object-contain"
           />
-          <h1 className="text-6xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
+          <h1 className="text-8xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
-          <h2 className="brand-text mt-2 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase">
+          <h2 className="brand-text mt-2 md:mt-4 tracking-[0.5em] opacity-80 text-[7px] md:text-base uppercase">
             THE ELITE LAB
           </h2>
           
           <div className="flex flex-col items-center gap-6 md:gap-8 mt-8 md:mt-12">
-            <p className="max-w-[240px] md:max-w-md text-[6px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center">
+            <p className="max-w-[200px] md:max-w-md text-[5px] md:text-base opacity-30 leading-relaxed tracking-wider detail-text uppercase text-center">
               Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
             </p>
             
