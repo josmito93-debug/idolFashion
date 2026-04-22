@@ -51,12 +51,14 @@ export const Hero = () => {
             THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col items-center gap-6 md:gap-8 mt-10 md:mt-12">
-            <p className="text-[5px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium px-8">
-              Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
-            </p>
+          <div className="flex flex-col items-center gap-6 md:gap-8 mt-10 md:mt-12 w-full">
+            <div className="md:contents flex justify-center w-full">
+              <p className="text-[10px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium scale-[0.5] md:scale-100 origin-center whitespace-nowrap md:whitespace-normal">
+                Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
+              </p>
+            </div>
             
-            <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative z-50 pointer-events-auto">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative z-50 pointer-events-auto mt-[-10px] md:mt-0">
               <button
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-4 py-2 md:px-10 md:py-5 bg-white text-black text-[9px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[200px] md:min-w-[280px]"
