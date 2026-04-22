@@ -65,7 +65,7 @@ export const Hero = () => {
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black text-[7px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[170px] md:min-w-[280px]"
               >
-                <span className="relative z-10">Join the Industry</span>
+                <span className="relative z-10">Join the Fashion Industry</span>
                 <StadiumWaveGrid />
               </button>
 
