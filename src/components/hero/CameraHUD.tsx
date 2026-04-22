@@ -49,8 +49,8 @@ export const CameraHUD = () => {
 
         <div className="flex items-center gap-2 md:gap-8 pointer-events-auto">
           <Link href="/login" className="flex flex-col items-end group">
-            <span className="camera-hud-text text-[8px] md:text-xs group-hover:text-accent transition-colors">ACCESS_LAB</span>
-            <span className="text-xs md:text-xl font-mono leading-none border-b border-white/20 group-hover:border-accent transition-all">SIGN_IN</span>
+            <span className="camera-hud-text text-[8px] md:text-xs group-hover:text-accent transition-colors">CLIENT_ACCESS</span>
+            <span className="text-xs md:text-xl font-mono leading-none border-b border-white/20 group-hover:border-accent transition-all">DOWNLOAD_MY_PHOTOGRAPHY</span>
           </Link>
 
           <div className="flex flex-col items-end">

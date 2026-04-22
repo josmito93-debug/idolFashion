@@ -1,5 +1,6 @@
 import { Hero } from "@/components/hero/Hero";
 import { ApplicationPortal } from "@/components/forms/ApplicationPortal";
+import { ModelSalesTeaser } from "@/components/marketing/ModelSalesTeaser";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
       <div className="relative z-10 bg-brand-secondary border-t border-white/5">
         <ApplicationPortal />
       </div>
+
+      {/* Professional Model Teaser Section */}
+      <ModelSalesTeaser />
 
       {/* Footer / Copyright */}
       <footer className="py-12 border-t border-white/5 bg-brand-secondary flex flex-col items-center">

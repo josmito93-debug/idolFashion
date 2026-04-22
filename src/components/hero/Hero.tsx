@@ -56,13 +56,22 @@ export const Hero = () => {
                 Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
              </p>
              
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 md:mt-12 items-center">
+             <button
+                onClick={() => document.getElementById('application-portal')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
+             >
+                <span className="relative z-10">Join the Industry</span>
+                <StadiumWaveGrid />
+             </button>
+
              <Link
                 href="/model-portfolios"
-                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto mt-6 md:mt-0 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center"
+                className="px-4 py-3 md:px-10 md:py-5 border border-white/20 text-white text-[10px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 pointer-events-auto detail-text min-w-[280px] text-center"
              >
-                <span className="relative z-10">Become an elite in fashion</span>
-                <StadiumWaveGrid />
+                Scale your model career
              </Link>
+          </div>
           </div>
         </motion.div>
       </div>
