@@ -21,10 +21,10 @@ export const EliteProducts = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         
         {/* Section Header */}
-        <div className="mb-20 text-center">
+        <div className="mb-20 text-left">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6"
             >
@@ -32,9 +32,10 @@ export const EliteProducts = () => {
                 <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase">Elite Service Tier</span>
             </motion.div>
             <h2 className="text-6xl md:text-8xl brand-text mb-4">Elite Model <br/><span className="text-accent">Development</span></h2>
-            <p className="max-w-3xl mx-auto detail-text opacity-40 text-sm md:text-base leading-relaxed uppercase tracking-widest">
+            <p className="max-w-3xl detail-text opacity-40 text-[10px] md:text-base leading-relaxed uppercase tracking-widest">
                 Our ultra-premium development kits are engineered to scale your professional identity with precision assets and a global industry placement strategy.
             </p>
+            <div className="glow-line mt-12" />
         </div>
 
         {/* 1. MODEL PROFESSIONAL KIT - VERTICAL VIDEO LAYOUT */}
@@ -93,12 +94,13 @@ export const EliteProducts = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <StripeButton productId="model-kit" amount={450} productName="Model Professional Kit" />
-                        <Link href="/model-portfolios" className="w-full py-4 border border-white/20 camera-hud-text text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
-                            Become a Professional
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <Link href="/register" className="w-full py-5 border border-white/20 camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
+                            Initialize Application
+                            <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
                 </div>
+                <div className="glow-line mt-12 lg:hidden" />
             </motion.div>
 
             {/* Right: 3 Vertical Videos Banner */}

@@ -63,10 +63,10 @@ export default function ModelPortfoliosSales() {
         <div className="absolute inset-0 opacity-10 pointer-events-none" 
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 md:px-12 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 text-left relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8"
           >
             <Zap className="w-3 h-3 text-accent" />
@@ -74,8 +74,8 @@ export default function ModelPortfoliosSales() {
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
             className="text-7xl md:text-[120px] brand-text leading-[0.9] mb-8"
           >
@@ -83,25 +83,25 @@ export default function ModelPortfoliosSales() {
           </motion.h1>
           
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="detail-text text-sm md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="detail-text text-[10px] md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mb-12 leading-relaxed"
           >
             Traditional portfolios are dead. We build high-performance digital ecosystems that integrate with the world&apos;s most powerful advertising networks. Stop relying on algorithms—own your data.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col md:flex-row gap-6 justify-center items-center"
+            className="flex flex-col md:flex-row gap-6 justify-start items-center md:items-start"
           >
-            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-sm uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3">
-              Apply for Model Kit
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-[8px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3">
+              Initialize Application
+              <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/models/valentina-rossi" className="px-12 py-5 border border-white/10 font-mono text-sm uppercase tracking-widest hover:bg-white/5 transition-all">
+            <Link href="/models/valentina-rossi" className="px-12 py-5 border border-white/10 font-mono text-[8px] uppercase tracking-widest hover:bg-white/5 transition-all">
               View Sample Portfolio
             </Link>
           </motion.div>

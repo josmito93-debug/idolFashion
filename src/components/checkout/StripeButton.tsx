@@ -53,14 +53,16 @@ export const StripeButton = ({ productId, amount, productName }: StripeButtonPro
     <button
       onClick={handleCheckout}
       disabled={loading}
-      className="flex-1 w-full px-8 py-4 bg-accent text-white camera-hud-text text-[10px] tracking-[0.2em] uppercase hover:bg-accent/80 transition-all flex items-center justify-center gap-2 group"
+      className="flex-1 w-full px-8 py-5 bg-accent text-white camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-accent/80 transition-all flex items-center justify-center gap-2 group relative overflow-hidden"
     >
       {loading ? (
         <Loader2 className="w-4 h-4 animate-spin" />
       ) : (
         <>
-          Initialize Secure Checkout
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <span className="relative z-10">Initialize Application</span>
+          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform relative z-10" />
+          {/* Subtle button glow overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         </>
       )}
     </button>
