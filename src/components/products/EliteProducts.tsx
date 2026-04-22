@@ -94,7 +94,7 @@ export const EliteProducts = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <StripeButton productId="model-kit" amount={450} productName="Model Professional Kit" />
-                        <Link href="/register" className="w-full py-5 border border-white/20 camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
+                        <Link href="/register" className="w-full py-2.5 border border-white/20 camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
                             Initialize Application
                             <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </Link>

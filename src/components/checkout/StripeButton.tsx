@@ -53,7 +53,7 @@ export const StripeButton = ({ productId, amount, productName }: StripeButtonPro
     <button
       onClick={handleCheckout}
       disabled={loading}
-      className="flex-1 w-full px-8 py-5 bg-accent text-white camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-accent/80 transition-all flex items-center justify-center gap-2 group relative overflow-hidden"
+      className="flex-1 w-full px-6 py-2.5 bg-accent text-white camera-hud-text text-[8px] tracking-[0.3em] uppercase hover:bg-accent/80 transition-all flex items-center justify-center gap-2 group relative overflow-hidden"
     >
       {loading ? (
         <Loader2 className="w-4 h-4 animate-spin" />

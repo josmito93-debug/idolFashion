@@ -96,7 +96,7 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-            className="flex flex-col items-center mt-2 mb-8"
+            className="flex flex-col items-center mt-2 mb-4"
           >
             <p className="detail-text text-[16px] md:text-base opacity-40 uppercase tracking-[0.3em] text-center scale-[0.65] md:scale-100 origin-center leading-relaxed">
               TECHNICAL INFRASTRUCTURE FOR THE ELITE MODEL.<br className="md:hidden" /> 
@@ -111,7 +111,7 @@ export default function ModelPortfoliosSales() {
             transition={{ delay: 0.7 }}
             className="flex flex-col md:flex-row gap-6 justify-center items-center"
           >
-            <Link href="/register" className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black font-mono text-[7px] md:text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[170px] md:min-w-[280px] justify-center">
+            <Link href="/register" className="px-3 py-1.5 bg-white text-black font-mono text-[7px] md:text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[170px] md:min-w-[280px] justify-center">
               <span>Initialize Deployment</span>
               <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </Link>
