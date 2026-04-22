@@ -142,6 +142,8 @@ export const EliteProducts = () => {
 
         </div>
 
+        <div className="glow-line my-32 opacity-50" />
+
         {/* 2. DESIGNER LAUNCH & SCALE KIT */}
         <motion.div 
             initial={{ opacity: 0, y: 40 }}

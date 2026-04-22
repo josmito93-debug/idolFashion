@@ -51,38 +51,38 @@ export const Hero = () => {
             THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-4 md:gap-12 mt-4 md:mt-12 items-center">
-             <p className="max-w-xs md:max-w-md text-[7px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center">
-                Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
-             </p>
-             
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 md:mt-12 items-center">
-             <button
+          <div className="flex flex-col items-center gap-8 mt-12">
+            <p className="max-w-xs md:max-w-md text-[7px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center">
+              Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
+            </p>
+            
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center relative z-50 pointer-events-auto">
+              <button
                 onClick={() => document.getElementById('application-portal')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
-             >
+                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
+              >
                 <span className="relative z-10">Join the Industry</span>
                 <StadiumWaveGrid />
-             </button>
+              </button>
 
-             <Link
+              <Link
                 href="/model-portfolios"
-                className="px-4 py-3 md:px-10 md:py-5 border border-white/20 text-white text-[10px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 pointer-events-auto detail-text min-w-[280px] text-center"
-             >
+                className="px-4 py-3 md:px-10 md:py-5 border border-white/20 text-white text-[10px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[280px] text-center"
+              >
                 Scale your model career
-             </Link>
-          </div>
+              </Link>
+            </div>
 
-          {/* Mobile Download Button - Centered in grid */}
-          <Link
-             href="/login"
-             className="md:hidden mt-8 flex flex-col items-center group pointer-events-auto"
-          >
-             <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
-             <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
+            {/* Mobile Download Button */}
+            <Link
+              href="/login"
+              className="md:hidden mt-4 flex flex-col items-center group relative z-50 pointer-events-auto"
+            >
+              <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
+              <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
                 DOWNLOAD MY PHOTOS
-             </span>
-          </Link>
+              </span>
+            </Link>
           </div>
         </motion.div>
       </div>
