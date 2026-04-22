@@ -1,0 +1,9 @@
+public/assets/*.mp4
+public/assets/*.jpg
+public/assets/*.heic
+!public/assets/logo.png
+.next/
+node_modules/
+.env*
+.vercel
+.git/

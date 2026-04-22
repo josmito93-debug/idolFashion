@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Battery, Zap, AlertCircle } from 'lucide-react'
+import Link from 'next/link'
 
 export const CameraHUD = () => {
   const [time, setTime] = useState('00:00:00:00')
@@ -46,7 +47,12 @@ export const CameraHUD = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-2 md:gap-8 pointer-events-auto">
+          <Link href="/login" className="flex flex-col items-end group">
+            <span className="camera-hud-text text-[8px] md:text-xs group-hover:text-accent transition-colors">ACCESS_LAB</span>
+            <span className="text-xs md:text-xl font-mono leading-none border-b border-white/20 group-hover:border-accent transition-all">SIGN_IN</span>
+          </Link>
+
           <div className="flex flex-col items-end">
             <span className="camera-hud-text text-[8px] md:text-xs">POWER</span>
             <div className="flex items-center gap-1 md:gap-2">
