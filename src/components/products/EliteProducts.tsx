@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Play, Check, ArrowRight, ShieldCheck, Zap, Sparkles, Music } from 'lucide-react'
 import { StripeButton } from '../checkout/StripeButton'
+import Link from 'next/link'
 
 const MODEL_VIDEOS = [
   '/assets/DFW%209TH%20PROMO%201304%20b.mp4',
@@ -92,12 +93,10 @@ export const EliteProducts = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <StripeButton productId="model-kit" amount={450} productName="Model Professional Kit" />
-                        <a 
-                          href="/models/valentina-rossi"
-                          className="flex-1 px-8 py-4 border border-white/10 text-white camera-hud-text text-[10px] tracking-[0.2em] uppercase hover:bg-white/5 transition-all text-center flex items-center justify-center"
-                        >
-                            View Sample Portfolio
-                        </a>
+                        <Link href="/model-portfolios" className="w-full py-4 border border-white/20 camera-hud-text text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group">
+                            Become a Professional
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                     </div>
                 </div>
             </motion.div>

@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { CameraHUD } from './CameraHUD'
 import { StadiumWaveGrid } from '../ui/StadiumWaveGrid'
+import Link from 'next/link'
 
 export const Hero = () => {
   return (
@@ -55,15 +56,13 @@ export const Hero = () => {
                 Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
              </p>
              
-             <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto mt-6 md:mt-0 detail-text relative overflow-hidden group shadow-sm"
-                onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
+             <Link
+                href="/model-portfolios"
+                className="px-4 py-3 md:px-10 md:py-5 bg-white text-black text-[10px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 pointer-events-auto mt-6 md:mt-0 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center"
              >
                 <span className="relative z-10">Become an elite in fashion</span>
                 <StadiumWaveGrid />
-             </motion.button>
+             </Link>
           </div>
         </motion.div>
       </div>
