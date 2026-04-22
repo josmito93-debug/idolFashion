@@ -25,33 +25,7 @@ function cn(...inputs: ClassValue[]) {
 
 // --- Components ---
 
-const StatusBar = () => {
-  const [time, setTime] = React.useState('')
-  
-  React.useEffect(() => {
-    const update = () => {
-      const now = new Date()
-      setTime(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }))
-    }
-    update()
-    const timer = setInterval(update, 1000)
-    return () => clearInterval(timer)
-  }, [])
-
-  return (
-    <div className="h-10 px-6 flex items-center justify-between text-[11px] font-medium text-white/90 select-none pointer-events-none sticky top-0 z-[60] bg-brand-secondary/80 backdrop-blur-lg">
-      <div className="w-16">{time}</div>
-      <div className="flex-1 flex justify-center">
-        <div className="w-24 h-6 bg-black rounded-b-2xl" /> {/* Dynamic Island / Notch */}
-      </div>
-      <div className="flex items-center gap-1.5 w-16 justify-end">
-        <Signal className="w-3 h-3" />
-        <Wifi className="w-3 h-3" />
-        <Battery className="w-3.5 h-3.5" />
-      </div>
-    </div>
-  )
-}
+// --- Components ---
 
 const BottomTabs = () => {
   const pathname = usePathname()
@@ -96,7 +70,7 @@ const BottomTabs = () => {
 
 const AppHeader = ({ user }: { user: any }) => {
   return (
-    <header className="px-6 py-4 flex items-center justify-between sticky top-10 z-50 bg-brand-secondary/80 backdrop-blur-lg border-b border-white/5">
+    <header className="px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-brand-secondary/80 backdrop-blur-lg border-b border-white/5">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-accent/20 border border-accent/20 overflow-hidden">
           {user?.image ? (
@@ -140,7 +114,6 @@ export const AppShell = ({ children }: { children: React.ReactNode }) => {
     <div className="min-h-[100dvh] bg-brand-secondary text-white selection:bg-accent/30 overflow-x-hidden">
       {/* App Container - Takes full width on mobile view */}
       <div className="w-full min-h-screen relative">
-        <StatusBar />
         <AppHeader user={user} />
         
         {/* Main Content Viewport */}

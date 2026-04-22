@@ -10,7 +10,8 @@ import {
   Package, 
   Plus,
   Play,
-  Heart
+  Heart,
+  User
 } from 'lucide-react'
 
 export default function DashboardHome() {
@@ -61,7 +62,123 @@ export default function DashboardHome() {
           ))}
         </section>
 
-        {/* Promo Banners */}
+        {/* --- NEW: Model Toolbox (Upsell Points) --- */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs uppercase tracking-[0.4em] font-bold text-accent">[ MODEL_TOOLBOX_v2 ]</h2>
+            <div className="h-[1px] flex-1 mx-8 bg-white/5" />
+            <div className="camera-hud-text text-[9px] opacity-30 tracking-widest uppercase">Select Operation</div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Download Photography */}
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="bg-accent rounded-[2.5rem] p-8 flex flex-col justify-between h-[300px] group cursor-pointer shadow-2xl shadow-accent/20 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-12 translate-x-12 blur-3xl" />
+              <div className="flex justify-between items-start relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center">
+                  <ShoppingBag className="w-7 h-7 text-white" />
+                </div>
+                <ArrowUpRight className="w-6 h-6 text-white/40 group-hover:text-white group-hover:rotate-45 transition-all" />
+              </div>
+              <div className="relative z-10">
+                <p className="text-white text-3xl font-bold leading-tight brand-text">Download <br/>Photography</p>
+                <div className="flex items-center gap-2 mt-4">
+                  <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  <p className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold">2 NEW EVENT SETS SYNCED</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Live Events */}
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="bg-zinc-900 border border-white/5 rounded-[2.5rem] p-8 flex flex-col justify-between h-[300px] group cursor-pointer relative overflow-hidden"
+            >
+              <div className="flex justify-between items-start relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center">
+                  <Clock className="w-7 h-7 text-accent" />
+                </div>
+                <ArrowUpRight className="w-6 h-6 text-white/10 group-hover:text-accent transition-all" />
+              </div>
+              <div className="relative z-10">
+                <p className="text-white text-3xl font-bold leading-tight brand-text">Industry <br/>Live Events</p>
+                <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-4 font-bold">12 UPCOMING CASTINGS & RUNWAYS</p>
+              </div>
+              <div className="absolute bottom-0 right-0 w-48 h-48 bg-accent/5 -skew-x-12 translate-x-20 translate-y-20 group-hover:translate-x-10 transition-transform" />
+            </motion.div>
+
+            {/* Scale Your Identity */}
+            <motion.div 
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-[2.5rem] p-8 flex flex-col justify-between h-[300px] group cursor-pointer relative overflow-hidden"
+            >
+              <div className="flex justify-between items-start relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-accent">
+                  <Package className="w-7 h-7" />
+                </div>
+                <div className="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[8px] font-bold tracking-widest uppercase">PRO UPGRADE</div>
+              </div>
+              <div className="relative z-10">
+                <p className="text-white text-3xl font-bold leading-tight brand-text">Scale Your <br/><span className="text-accent">Identity</span></p>
+                <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-4 font-bold">GET YOUR PROFESSIONAL PORTFOLIO & DOMAIN</p>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-40 h-40 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Sparkles className="w-full h-full text-accent" />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* --- NEW: Education / Masterclasses --- */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs uppercase tracking-[0.4em] font-bold text-white/40">RECOMMENDED_MASTERCLASSES</h3>
+            <span className="text-[10px] text-accent font-bold uppercase tracking-widest cursor-pointer hover:underline">View All Curriculum</span>
+          </div>
+          
+          <div className="relative aspect-[21/9] rounded-[3rem] overflow-hidden group cursor-pointer border border-white/5 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=2000" 
+              alt="Masterclass" 
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 brightness-50"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            
+            <div className="absolute inset-0 flex flex-col justify-end p-12">
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center shadow-2xl"
+                >
+                  <Play className="w-6 h-6 fill-black" />
+                </motion.div>
+                <div>
+                  <span className="camera-hud-text text-[10px] tracking-[0.3em] font-bold text-accent">CURRICULUM_MOD_04</span>
+                  <h4 className="text-5xl font-bold text-white brand-text">Runway Technique: <br/>The Milan Standard</h4>
+                </div>
+              </div>
+              <div className="flex items-center gap-8 opacity-60">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span className="camera-hud-text text-[10px]">45 MINS</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  <span className="camera-hud-text text-[10px]">ELITE COACHES</span>
+                </div>
+              </div>
+            </div>
+            
+            <button className="absolute top-12 right-12 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white/40 hover:text-accent hover:bg-white/20 transition-all border border-white/10">
+              <Heart className="w-6 h-6" />
+            </button>
+          </div>
+        </section>
+
+        {/* Promo Banners (Moved down or kept as secondary) */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Model Promo */}
           <motion.div
