@@ -42,7 +42,7 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-10 md:h-24 mb-1 md:mb-8 object-contain mt-[-15px] md:mt-0"
+            className="h-10 md:h-24 mb-3 md:mb-8 object-contain mt-[-35px] md:mt-0"
           />
           <h1 className="text-[115px] md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
