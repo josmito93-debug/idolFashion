@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     }
 
     // 2. Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password.trim(), 10);
 
     // 3. Create user in Airtable using the EXACT field names provided
     // Minimal set to ensure success

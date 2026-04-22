@@ -27,8 +27,8 @@ export async function POST(req: Request) {
     const userData = userRecord.fields;
 
     // 2. Verify password (field is 'password_hash')
-    // Check both 'password_hash' and 'Password' just in case
-    const storedPassword = (userData['password_hash'] || userData['Password']) as string;
+    const rawStored = (userData['password_hash'] || userData['Password']) as string;
+    const storedPassword = rawStored ? rawStored.trim() : null;
     
     if (!storedPassword) {
        return NextResponse.json({ error: 'Security credentials missing for this identity' }, { status: 401 });
@@ -36,9 +36,14 @@ export async function POST(req: Request) {
 
     let isValid = false;
 
-    if (storedPassword.startsWith('$2a$')) {
-      isValid = await bcrypt.compare(password, storedPassword);
-    } else {
+    try {
+      if (storedPassword.startsWith('$2') && storedPassword.includes('$')) {
+        isValid = await bcrypt.compare(password, storedPassword);
+      } else {
+        isValid = password === storedPassword;
+      }
+    } catch (bcryptError) {
+      console.error('Bcrypt Error:', bcryptError);
       isValid = password === storedPassword;
     }
 
