@@ -77,26 +77,26 @@ export const ApplicationPortal = () => {
                 key={r.id}
                 className="group w-full flex flex-col md:flex-row md:items-end justify-between gap-4 py-8 md:py-12 px-6 md:px-12 relative overflow-hidden border-b border-white/10 hover:bg-white/[0.02] transition-colors"
               >
-                  <div className="flex-1 text-left items-start flex flex-col">
+                  <div className="flex-1 text-left">
                     <motion.h4 
                       initial={{ x: -50, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
-                      className="big-text brand-text text-6xl md:text-[10rem] lg:text-[13rem] transition-all duration-500 group-hover:text-accent tracking-tighter leading-[0.7] text-left"
+                      className="big-text brand-text text-8xl md:text-[10rem] lg:text-[13rem] transition-all duration-500 group-hover:text-accent tracking-tighter leading-[0.7]"
                     >
                       {r.label}
                     </motion.h4>
-                    <p className="detail-text mt-4 opacity-40 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-[8px] md:text-sm text-left uppercase tracking-widest">
-                       <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100" />
+                    <p className="detail-text mt-4 opacity-40 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-[10px] md:text-sm">
+                       <span className="w-2 h-2 rounded-full bg-accent opacity-0 group-hover:opacity-100" />
                        {r.description}
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-start md:items-end h-full mt-6 md:mt-0">
+                  <div className="flex flex-col items-start md:items-end h-full mt-4 md:mt-0">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => { setRole(r.id); handleNext(); }}
-                      className="detail-text px-6 py-3 bg-white text-black tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-all z-10 text-[7px] md:text-xs font-bold"
+                      className="detail-text px-3 py-1.5 md:px-6 md:py-3 bg-transparent border border-white/10 text-white md:bg-white md:text-black tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-all z-10 text-[7px] md:text-xs"
                     >
                       Initialize Application {">"}
                     </motion.button>
