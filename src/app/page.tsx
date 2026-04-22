@@ -1,19 +1,11 @@
 import { Hero } from "@/components/hero/Hero";
 import { ApplicationPortal } from "@/components/forms/ApplicationPortal";
-import { EliteProducts } from "@/components/products/EliteProducts";
-import { ModelMarketing } from "@/components/marketing/ModelMarketing";
 
 export default function Home() {
   return (
     <main className="relative bg-brand-secondary selection:bg-accent selection:text-white">
       {/* Hero Section with Camera HUD */}
       <Hero />
-
-      {/* Main Content: Elite Product Kits */}
-      <EliteProducts />
-
-      {/* Why Professional Section */}
-      <ModelMarketing />
 
       {/* Main Content: Intake Lab */}
       <div className="relative z-10 bg-brand-secondary border-t border-white/5">

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { CameraHUD } from '@/components/hero/CameraHUD'
+import { EliteProducts } from '@/components/products/EliteProducts'
 
 const FEATURES = [
   {
@@ -159,118 +160,156 @@ export default function ModelPortfoliosSales() {
         </div>
       </section>
 
-      {/* Data Section */}
-      <section className="py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
+      {/* The Technical Edge - Visual Performance Section */}
+      <section className="py-32 relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 opacity-5 pointer-events-none" 
+             style={{ backgroundImage: 'linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            
             <div className="space-y-12">
-              <h2 className="text-5xl md:text-7xl brand-text leading-tight">DATA IS THE <br/><span className="text-accent">NEW CURRENCY.</span></h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="camera-hud-text text-lg uppercase tracking-widest">Verify Your Reach</p>
-                    <p className="detail-text text-xs opacity-40 uppercase leading-relaxed">Show potential clients and agencies verified traffic data from your own domain.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="camera-hud-text text-lg uppercase tracking-widest">Global Exposure</p>
-                    <p className="detail-text text-xs opacity-40 uppercase leading-relaxed">Our SEO architecture ensures you are discoverable by international scouts 24/7.</p>
-                  </div>
-                </div>
+              <div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-accent/20 bg-accent/5 mb-8"
+                >
+                  <Zap className="w-4 h-4 text-accent" />
+                  <span className="camera-hud-text text-[10px] tracking-[0.3em] uppercase text-accent">The Conversion Edge</span>
+                </motion.div>
+                <h2 className="text-6xl md:text-8xl brand-text leading-[0.9] mb-8">Data-Driven <br/><span className="text-accent">Success.</span></h2>
+                <p className="detail-text text-sm md:text-base opacity-40 uppercase tracking-[0.2em] leading-relaxed max-w-xl">
+                  Una página web conectada con el Meta Pixel no es solo un portafolio; es tu motor de ventas personal. Significa generar más visibilidad, demostrar tu valor a las marcas y asegurar contratos de alto nivel.
+                </p>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="p-1 rounded-3xl bg-gradient-to-br from-accent/40 to-transparent border border-white/10">
-                <div className="bg-black rounded-[1.4rem] p-8 md:p-12 space-y-8">
-                   <div className="flex justify-between items-center">
-                      <span className="camera-hud-text text-[10px] opacity-40 uppercase">[ PROTOCOL_HUD ]</span>
-                      <span className="camera-hud-text text-accent text-[10px] animate-pulse uppercase">● Live Monitoring</span>
-                   </div>
-                   <div className="space-y-6">
-                      <div className="space-y-2">
-                         <div className="flex justify-between text-[10px] uppercase font-mono opacity-50">
-                            <span>Search Visibility</span>
-                            <span>98%</span>
-                         </div>
-                         <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: '98%' }}
-                              className="h-full bg-accent" 
-                            />
-                         </div>
-                      </div>
-                      <div className="space-y-2">
-                         <div className="flex justify-between text-[10px] uppercase font-mono opacity-50">
-                            <span>Booking Conversion</span>
-                            <span>84%</span>
-                         </div>
-                         <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                            <motion.div 
-                              initial={{ width: 0 }}
-                              whileInView={{ width: '84%' }}
-                              className="h-full bg-accent" 
-                            />
-                         </div>
-                      </div>
-                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* The Model Kit (Pricing/Product) */}
-      <section className="py-32 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-4 md:px-12 text-center space-y-12">
-          <div className="space-y-4">
-            <h2 className="text-6xl md:text-8xl brand-text">THE <span className="text-accent">MODEL KIT</span></h2>
-            <p className="detail-text text-sm md:text-base opacity-40 uppercase tracking-[0.4em]">Everything you need to go professional.</p>
-          </div>
-
-          <div className="p-12 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl relative overflow-hidden text-left">
-            <div className="absolute top-0 right-0 p-8">
-              <ShieldCheck className="w-12 h-12 text-accent opacity-20" />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <ul className="space-y-6">
+              <div className="grid grid-cols-1 gap-6">
                 {[
-                  "Personalized .com Domain",
-                  "Professional Email Suite",
-                  "High-Performance Landing Page",
-                  "Self-Management Dashboard",
-                  "Meta Pixel Integration",
-                  "Advanced SEO Indexing"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 group">
-                    <CheckCircle2 className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
-                    <span className="camera-hud-text text-sm uppercase tracking-widest">{item}</span>
-                  </li>
+                  {
+                    title: "Meta Pixel Optimization",
+                    desc: "Tus visitas se convierten en datos. Las marcas te contratan porque puedes demostrar tu alcance real y ROI.",
+                    icon: Target
+                  },
+                  {
+                    title: "SEO Visibility",
+                    desc: "Aparece en el radar de agencias internacionales cuando busquen talento en Google.",
+                    icon: Search
+                  },
+                  {
+                    title: "Brand Conversion",
+                    desc: "Diseñada para convertir vistas en reservas. Tu identidad digital trabajando 24/7 para ti.",
+                    icon: BarChart3
+                  }
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/5 group hover:border-accent/30 transition-all"
+                  >
+                    <div className="p-3 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="camera-hud-text text-sm uppercase tracking-widest">{item.title}</h4>
+                      <p className="detail-text text-[11px] opacity-40 uppercase leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
-              <div className="flex flex-col justify-center items-center md:items-end space-y-6">
-                <div className="text-center md:text-right">
-                  <p className="camera-hud-text text-xs opacity-40 uppercase mb-2">Investment</p>
-                  <p className="text-6xl brand-text">$250<span className="text-2xl opacity-40">/kit</span></p>
-                </div>
-                <Link href="/register" className="w-full md:w-auto px-12 py-5 bg-accent text-white font-mono text-sm uppercase tracking-widest hover:brightness-110 transition-all font-bold text-center">
-                  Order Now
-                </Link>
+              </div>
+
+              <div className="pt-8 flex items-center gap-8">
+                 <div className="flex -space-x-3">
+                    {[1,2,3,4].map(i => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800" />
+                    ))}
+                 </div>
+                 <p className="camera-hud-text text-[10px] opacity-40 uppercase tracking-widest">
+                    Joined by 400+ Elite Models <br/> across Miami & Milan
+                 </p>
               </div>
             </div>
+
+            {/* Right: Visual Data HUD */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="relative"
+            >
+               <div className="aspect-square rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-1">
+                  <div className="h-full w-full rounded-[1.4rem] bg-brand-secondary overflow-hidden relative p-8 md:p-12 flex flex-col justify-between border border-white/5">
+                     <div className="flex justify-between items-start">
+                        <div className="space-y-1">
+                          <div className="camera-hud-text text-[10px] opacity-30 uppercase">[ PROTOCOL_HUD ]</div>
+                          <div className="text-3xl brand-text">Identity Performance</div>
+                        </div>
+                        <Globe2 className="w-8 h-8 opacity-20 text-accent" />
+                     </div>
+
+                     {/* Central Data Viz */}
+                     <div className="flex-1 flex flex-col justify-center gap-12">
+                        <div className="relative h-40 w-full border border-white/5 rounded-2xl bg-black/40 flex items-center justify-center overflow-hidden">
+                           <div className="absolute inset-0 bg-accent/5 animate-pulse" />
+                           <div className="flex gap-1.5 items-end h-24 relative z-10">
+                              {[40, 70, 45, 90, 65, 80, 55, 100, 30, 85, 45, 75].map((h, i) => (
+                                <motion.div 
+                                  key={i}
+                                  initial={{ height: 0 }}
+                                  whileInView={{ height: `${h}%` }}
+                                  transition={{ duration: 1, delay: i * 0.05 }}
+                                  className="w-2.5 bg-accent/40 rounded-t-sm" 
+                                />
+                              ))}
+                           </div>
+                           <div className="absolute bottom-4 right-4 flex items-center gap-2">
+                             <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                             <span className="camera-hud-text text-[8px] text-accent uppercase tracking-widest">Live ROI Tracking</span>
+                           </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-6">
+                           <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
+                              <p className="camera-hud-text text-[10px] opacity-30 uppercase mb-2">Total Digital Reach</p>
+                              <p className="detail-text text-3xl uppercase tracking-tighter">1.2M +</p>
+                              <p className="text-[8px] text-accent camera-hud-text mt-2">↑ 24% THIS MONTH</p>
+                           </div>
+                           <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
+                              <p className="camera-hud-text text-[10px] opacity-30 uppercase mb-2">Booking Conversion</p>
+                              <p className="detail-text text-3xl uppercase tracking-tighter">+84.2%</p>
+                              <p className="text-[8px] text-accent camera-hud-text mt-2">OPTIMIZED BY PIXEL</p>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div className="pt-8 border-t border-white/5 flex justify-between items-center">
+                        <div className="flex items-center gap-3">
+                           <ShieldCheck className="w-5 h-5 text-accent" />
+                           <span className="camera-hud-text text-[10px] opacity-50 uppercase tracking-[0.2em]">Verified Elite Profile ID</span>
+                        </div>
+                        <div className="camera-hud-text text-[10px] opacity-20">MODEL_ID_9821_LAB</div>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Floating Pixel Status */}
+               <div className="absolute -top-6 -right-6 p-6 rounded-2xl bg-black border border-accent/30 backdrop-blur-xl shadow-2xl z-20">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <p className="camera-hud-text text-accent text-[10px] uppercase tracking-widest">Pixel Engine</p>
+                  </div>
+                  <p className="detail-text text-white text-xs uppercase font-bold tracking-widest">ACTIVE / COLLECTING ROI DATA</p>
+               </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
+
+
+      {/* Pricing and Kits Section */}
+      <EliteProducts />
 
       {/* Footer */}
       <footer className="py-12 border-t border-white/5 text-center">
