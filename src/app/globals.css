@@ -131,36 +131,53 @@
     animation: shimmer 4s linear infinite;
   }
 
-  @keyframes line-glow {
-    0% { left: -100%; }
-    100% { left: 100%; }
+  @keyframes line-glow-move {
+    0% { transform: translateX(-150%); }
+    50% { transform: translateX(150%); }
+    100% { transform: translateX(-150%); }
+  }
+
+  @keyframes line-shimmer-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .glow-line {
     height: 1.5px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(
+      90deg, 
+      rgba(10, 10, 10, 0.5) 0%, 
+      rgba(232, 49, 227, 0.2) 25%, 
+      rgba(255, 255, 255, 0.1) 50%, 
+      rgba(232, 49, 227, 0.2) 75%, 
+      rgba(10, 10, 10, 0.5) 100%
+    );
+    background-size: 200% 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(232, 49, 227, 0.1);
+    animation: line-shimmer-bg 8s ease infinite;
+    box-shadow: 0 0 10px rgba(232, 49, 227, 0.05);
   }
 
   .glow-line::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     height: 100%;
-    width: 60%;
+    width: 30%;
     background: linear-gradient(
       90deg, 
       transparent 0%, 
-      rgba(232, 49, 227, 0.6) 30%, 
+      rgba(232, 49, 227, 0.8) 30%, 
       #ffffff 50%, 
-      rgba(232, 49, 227, 0.6) 70%, 
+      rgba(232, 49, 227, 0.8) 70%, 
       transparent 100%
     );
-    animation: line-glow 2.5s linear infinite;
-    filter: blur(0.5px);
+    animation: line-glow-move 4s ease-in-out infinite;
+    filter: blur(1.5px);
+    box-shadow: 0 0 20px rgba(232, 49, 227, 0.4);
   }
 }
