@@ -44,7 +44,7 @@ export const Hero = () => {
             alt="Idol Fashion Logo" 
             className="h-10 md:h-24 mb-4 md:mb-8 object-contain"
           />
-          <h1 className="text-9xl md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
+          <h1 className="text-[115px] md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
           <h2 className="brand-text mt-3 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase">
