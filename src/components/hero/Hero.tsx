@@ -61,7 +61,7 @@ export const Hero = () => {
             <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative z-50 pointer-events-auto mt-[-10px] md:mt-0">
               <button
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-4 py-2 md:px-10 md:py-5 bg-white text-black text-[9px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[200px] md:min-w-[280px]"
+                className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black text-[8px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[170px] md:min-w-[280px]"
               >
                 <span className="relative z-10">Join the Industry</span>
                 <StadiumWaveGrid />
@@ -69,7 +69,7 @@ export const Hero = () => {
 
               <Link
                 href="/model-portfolios"
-                className="px-4 py-2 md:px-10 md:py-5 border border-white/20 text-white text-[9px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[200px] md:min-w-[280px] text-center"
+                className="px-3 py-1.5 md:px-10 md:py-5 border border-white/20 text-white text-[8px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[170px] md:min-w-[280px] text-center"
               >
                 Scale your model career
               </Link>
