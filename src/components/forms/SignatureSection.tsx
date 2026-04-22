@@ -26,7 +26,7 @@ export const SignatureSection = ({ role, onComplete }: SignatureSectionProps) =>
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#ffffff', '#ff3b30', '#000000']
+      colors: ['#ffffff', '#e831e3', '#000000']
     })
     setTimeout(onComplete, 1500)
   }

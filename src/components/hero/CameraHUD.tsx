@@ -36,7 +36,7 @@ export const CameraHUD = () => {
               <motion.div 
                 animate={{ opacity: [1, 0, 1] }} 
                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-1.5 h-1.5 md:w-3 md:h-3 rounded-full bg-accent"
+                className="w-1.5 h-1.5 md:w-3 md:h-3 rounded-full bg-[#ff3b30]"
               />
               <span className="text-xs md:text-xl font-mono tabular-nums leading-none">{time}</span>
             </div>

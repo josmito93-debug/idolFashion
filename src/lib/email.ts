@@ -19,7 +19,7 @@ export async function sendDeliveryEmail(
       (p) => `
     <div style="margin-bottom: 20px; border: 1px solid #eee; padding: 15px; border-radius: 12px; background-color: #f9f9f9;">
       <p style="margin: 0 0 10px 0; font-weight: bold; color: #111;">${p.name}</p>
-      ${useLinks ? `<a href="${p.url}" style="background-color: #ff3b30; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 13px; font-weight: bold;">Download High-Res</a>` : `<p style="font-size: 12px; color: #666;">(See attachment)</p>`}
+      ${useLinks ? `<a href="${p.url}" style="background-color: #e831e3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 13px; font-weight: bold;">Download High-Res</a>` : `<p style="font-size: 12px; color: #666;">(See attachment)</p>`}
     </div>
   `
     )
@@ -42,7 +42,7 @@ export async function sendDeliveryEmail(
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #111; line-height: 1.6;">
           <div style="background-color: #111; padding: 40px 20px; text-align: center; border-radius: 16px 16px 0 0;">
              <h1 style="color: white; margin: 0; font-size: 24px; letter-spacing: 4px;">IDOL FASHION</h1>
-             <p style="color: #ff3b30; margin: 5px 0 0 0; font-size: 10px; letter-spacing: 6px;">THE ELITE LAB</p>
+             <p style="color: #e831e3; margin: 5px 0 0 0; font-size: 10px; letter-spacing: 6px;">THE ELITE LAB</p>
           </div>
           
           <div style="padding: 40px 20px; border: 1px solid #eee; border-top: none; border-radius: 0 0 16px 16px;">

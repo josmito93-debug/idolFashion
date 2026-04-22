@@ -7,7 +7,8 @@
 
   --color-brand-primary: #ffffff;
   --color-brand-secondary: #0a0a0a;
-  --color-accent: #ff3b30; /* "REC" Red */
+  --color-accent: #e831e3; /* Magenta */
+  --color-rec-red: #ff3b30; /* Classic REC Red */
 }
 
 @layer base {

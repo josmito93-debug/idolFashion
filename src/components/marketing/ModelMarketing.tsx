@@ -6,17 +6,17 @@ import { Target, Search, BarChart3, Globe2, ShieldCheck, Zap } from 'lucide-reac
 
 const BENEFITS = [
   {
-    icon: <Target className="w-6 h-6" />,
+    icon: Target,
     title: "Meta Pixel Integration",
     description: "Every visit, interaction, and click is tracked. When brands look for talent, you provide them with the data they need to guarantee ROI."
   },
   {
-    icon: <Search className="w-6 h-6" />,
+    icon: Search,
     title: "Google Indexing (SEO)",
     description: "Your professional name becomes a clickable entity in search engines. Appear in top results when magazines and agencies search for you."
   },
   {
-    icon: <BarChart3 className="w-6 h-6" />,
+    icon: BarChart3,
     title: "Conversion Focused",
     description: "Your portfolio isn't just a gallery; it's a sales machine designed to turn profile views into high-paying bookings."
   }
@@ -58,7 +58,7 @@ export const ModelMarketing = () => {
                   className="flex gap-6 group"
                 >
                   <div className="mt-1 p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-accent/40 transition-colors">
-                    {React.cloneElement(benefit.icon as React.ReactElement, { className: "w-5 h-5 text-accent" })}
+                    <benefit.icon className="w-5 h-5 text-accent" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="camera-hud-text text-lg tracking-widest uppercase">{benefit.title}</h3>

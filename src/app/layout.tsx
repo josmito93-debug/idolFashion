@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { gcVank, inter, jetbrainsMono, aestica, vongks, domica } from "./fonts";
 import "./globals.css";
 import { LoadingCalibration } from "@/components/ui/LoadingCalibration";
-import { FontSwitcher } from "@/components/ui/FontSwitcher";
 
 export const metadata: Metadata = {
   title: "Idol Fashion: The Elite Lab",
@@ -21,7 +20,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-brand-secondary text-brand-primary selection:bg-accent selection:text-white overflow-x-hidden">
         <LoadingCalibration />
-        <FontSwitcher />
         {children}
       </body>
     </html>
