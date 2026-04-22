@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * CRITICAL: MOBILE LAYOUT IS FINALIZED.
+ * DO NOT ALTER POSITIONS, MARGINS, OR TRANSLATIONS FOR MOBILE VIEWPORTS.
+ * The current composition is precisely tuned to fit within the Camera HUD focus frame.
+ */
 import React from 'react'
 import { motion } from 'framer-motion'
 import { CameraHUD } from './CameraHUD'

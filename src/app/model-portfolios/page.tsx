@@ -59,50 +59,61 @@ export default function ModelPortfoliosSales() {
       <CameraHUD />
       
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 opacity-10 pointer-events-none" 
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 md:px-12 text-left relative z-10">
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
+          <motion.img 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            src="/assets/logo.png" 
+            alt="Idol Fashion Logo" 
+            className="h-12 md:h-20 mb-4 md:mb-8 object-contain mt-[-40px]"
+          />
+
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-8"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-6"
           >
             <Zap className="w-3 h-3 text-accent" />
             <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase text-accent">Professional Infrastructure</span>
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-7xl md:text-[120px] brand-text leading-[0.9] mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            className="text-5xl md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter"
           >
             OWN YOUR IDENTITY. <br/><span className="text-accent">SCALE YOUR CAREER.</span>
           </motion.h1>
           
-          <motion.p 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="detail-text text-[10px] md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mb-12 leading-relaxed"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+            className="flex flex-col items-center mb-12"
           >
-            Traditional portfolios are dead. We build high-performance digital ecosystems that integrate with the world&apos;s most powerful advertising networks. Stop relying on algorithms—own your data.
-          </motion.p>
+            <p className="detail-text text-[14px] md:text-base opacity-40 uppercase tracking-[0.3em] text-center scale-[0.6] md:scale-100 origin-center leading-relaxed">
+              TECHNICAL INFRASTRUCTURE FOR THE ELITE MODEL.<br className="md:hidden" /> 
+              SCALE YOUR BRAND WITH SURGICAL PRECISION.<br className="md:hidden" /> 
+              OWN YOUR DATA, OWN YOUR FUTURE.
+            </p>
+          </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col md:flex-row gap-6 justify-start items-center md:items-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex flex-col md:flex-row gap-6 justify-center items-center"
           >
-            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-[8px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3">
-              Initialize Application
-              <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link href="/models/valentina-rossi" className="px-12 py-5 border border-white/10 font-mono text-[8px] uppercase tracking-widest hover:bg-white/5 transition-all">
-              View Sample Portfolio
+            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-[9px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[280px] justify-center">
+              <span>Initialize Deployment</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
