@@ -81,15 +81,6 @@ export const CameraHUD = () => {
              <div className="h-8 w-[2px] bg-white/20 absolute" />
           </div>
 
-          {/* Mobile centered download button - Exactly on the bottom line of focus area */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 md:hidden pointer-events-auto">
-             <Link href="/login" className="flex flex-col items-center group">
-                <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
-                <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
-                   DOWNLOAD MY PHOTOS
-                </span>
-             </Link>
-          </div>
         </div>
       </div>
 

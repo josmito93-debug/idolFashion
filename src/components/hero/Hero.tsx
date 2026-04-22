@@ -72,6 +72,17 @@ export const Hero = () => {
                 Scale your model career
              </Link>
           </div>
+
+          {/* Mobile Download Button - Centered in grid */}
+          <Link
+             href="/login"
+             className="md:hidden mt-8 flex flex-col items-center group pointer-events-auto"
+          >
+             <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
+             <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
+                DOWNLOAD MY PHOTOS
+             </span>
+          </Link>
           </div>
         </motion.div>
       </div>
