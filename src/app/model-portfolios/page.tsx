@@ -63,21 +63,21 @@ export default function ModelPortfoliosSales() {
         <div className="absolute inset-0 opacity-10 pointer-events-none" 
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center translate-y-[10px] md:translate-y-0">
           <motion.img 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-12 md:h-20 mb-4 md:mb-8 object-contain mt-[-60px]"
+            className="h-10 md:h-24 mb-5 md:mb-8 object-contain mt-[-90px] md:mt-0"
           />
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-4"
           >
             <Zap className="w-3 h-3 text-accent" />
             <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase text-accent">Professional Infrastructure</span>
@@ -87,7 +87,7 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="text-[64px] md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter"
+            className="text-[64px] md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter pt-2 pb-1"
           >
             OWN YOUR IDENTITY. <br/><span className="text-accent">SCALE YOUR CAREER.</span>
           </motion.h1>
@@ -96,9 +96,9 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-            className="flex flex-col items-center mb-12"
+            className="flex flex-col items-center mt-2 mb-8"
           >
-            <p className="detail-text text-[14px] md:text-base opacity-40 uppercase tracking-[0.3em] text-center scale-[0.6] md:scale-100 origin-center leading-relaxed">
+            <p className="detail-text text-[16px] md:text-base opacity-40 uppercase tracking-[0.3em] text-center scale-[0.65] md:scale-100 origin-center leading-relaxed">
               TECHNICAL INFRASTRUCTURE FOR THE ELITE MODEL.<br className="md:hidden" /> 
               SCALE YOUR BRAND WITH SURGICAL PRECISION.<br className="md:hidden" /> 
               OWN YOUR DATA, OWN YOUR FUTURE.
@@ -111,9 +111,9 @@ export default function ModelPortfoliosSales() {
             transition={{ delay: 0.7 }}
             className="flex flex-col md:flex-row gap-6 justify-center items-center"
           >
-            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-[9px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[280px] justify-center">
+            <Link href="/register" className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black font-mono text-[7px] md:text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[170px] md:min-w-[280px] justify-center">
               <span>Initialize Deployment</span>
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
