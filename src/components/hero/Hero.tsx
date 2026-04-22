@@ -52,7 +52,7 @@ export const Hero = () => {
           </h2>
           
           <div className="flex flex-col items-center gap-6 md:gap-8 mt-8 md:mt-12">
-            <p className="max-w-[200px] md:max-w-md text-[5px] md:text-base opacity-30 leading-relaxed tracking-wider detail-text uppercase text-center">
+            <p className="max-w-[140px] md:max-w-md text-[4.5px] md:text-base opacity-30 leading-relaxed tracking-wider detail-text uppercase text-center">
               Where technical precision meets high-fashion evolution. The industry&apos;s premier development incubator.
             </p>
             
