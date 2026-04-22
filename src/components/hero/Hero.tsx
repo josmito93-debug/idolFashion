@@ -42,7 +42,7 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-10 md:h-24 mb-1 md:mb-8 object-contain"
+            className="h-10 md:h-24 mb-1 md:mb-8 object-contain mt-[-15px] md:mt-0"
           />
           <h1 className="text-[115px] md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
@@ -53,7 +53,7 @@ export const Hero = () => {
           
           <div className="flex flex-col items-center gap-2 md:gap-8 mt-2 md:mt-12 w-full">
             <div className="md:contents flex justify-center w-full">
-              <p className="text-[10px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium scale-[0.5] md:scale-100 origin-center max-w-none md:max-w-md">
+              <p className="text-[16px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium scale-[0.5] md:scale-100 origin-center max-w-none md:max-w-md">
                 Where technical precision meets<br className="md:hidden" /> 
                 high-fashion evolution. The industry&apos;s<br className="md:hidden" /> 
                 premier development incubator.
@@ -63,7 +63,7 @@ export const Hero = () => {
             <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative z-50 pointer-events-auto mt-[-10px] md:mt-0">
               <button
                 onClick={() => document.getElementById('apply-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black text-[8px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[170px] md:min-w-[280px]"
+                className="px-3 py-1.5 md:px-10 md:py-5 bg-white text-black text-[7px] md:text-sm tracking-widest uppercase border border-transparent hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[170px] md:min-w-[280px]"
               >
                 <span className="relative z-10">Join the Industry</span>
                 <StadiumWaveGrid />
@@ -71,7 +71,7 @@ export const Hero = () => {
 
               <Link
                 href="/model-portfolios"
-                className="px-3 py-1.5 md:px-10 md:py-5 border border-white/20 text-white text-[8px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[170px] md:min-w-[280px] text-center"
+                className="px-3 py-1.5 md:px-10 md:py-5 border border-white/20 text-white text-[7px] md:text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 detail-text min-w-[170px] md:min-w-[280px] text-center"
               >
                 Scale your model career
               </Link>
