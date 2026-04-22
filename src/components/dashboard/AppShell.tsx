@@ -137,14 +137,14 @@ export const AppShell = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   return (
-    <div className="min-h-[100dvh] bg-brand-secondary text-white selection:bg-accent/30 flex justify-center">
-      {/* App Container - Mimics Phone on Desktop */}
-      <div className="w-full max-w-md bg-brand-secondary min-h-screen relative shadow-[0_0_100px_rgba(0,0,0,0.5)] border-x border-white/5">
+    <div className="min-h-[100dvh] bg-brand-secondary text-white selection:bg-accent/30 overflow-x-hidden">
+      {/* App Container - Takes full width on mobile view */}
+      <div className="w-full min-h-screen relative">
         <StatusBar />
         <AppHeader user={user} />
         
         {/* Main Content Viewport */}
-        <main className="pb-32 pt-4 px-6 overflow-y-auto">
+        <main className="pb-32 pt-4 px-6 overflow-y-auto overflow-x-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -158,11 +158,6 @@ export const AppShell = ({ children }: { children: React.ReactNode }) => {
         </main>
 
         <BottomTabs />
-
-        {/* Global HUD Decor (Mobile Optimized) */}
-        <div className="fixed top-1/2 -right-4 translate-x-1/2 rotate-90 hidden lg:block opacity-20 pointer-events-none">
-          <p className="camera-hud-text text-[10px] tracking-[0.5em] whitespace-nowrap">IDOL_FASHION_CORE_PROTOCOL_v1.0.4</p>
-        </div>
       </div>
     </div>
   )
