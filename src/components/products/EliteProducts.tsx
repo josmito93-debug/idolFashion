@@ -6,8 +6,8 @@ import { Play, Check, ArrowRight, ShieldCheck, Zap, Sparkles, Music } from 'luci
 import { StripeButton } from '../checkout/StripeButton'
 
 const MODEL_VIDEOS = [
-  '/assets/DFW 9TH PROMO 1304 b.mp4',
-  '/assets/DFW 9TH PROMO 1304 c.mp4',
+  '/assets/DFW%209TH%20PROMO%201304%20b.mp4',
+  '/assets/DFW%209TH%20PROMO%201304%20c.mp4',
   '/assets/lv_0_20251013183505.mp4'
 ]
 
@@ -30,7 +30,7 @@ export const EliteProducts = () => {
                 <Sparkles className="w-3 h-3 text-accent" />
                 <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase">Elite Service Tier</span>
             </motion.div>
-            <h2 className="text-6xl md:text-8xl brand-text mb-4">The Professional <br/><span className="text-accent">Evolution</span></h2>
+            <h2 className="text-6xl md:text-8xl brand-text mb-4">Become a Professional <br/><span className="text-accent">Model</span></h2>
             <p className="max-w-2xl mx-auto detail-text opacity-40 text-sm md:text-base leading-relaxed uppercase tracking-widest">
                 Our ultra-premium development kits are designed to fast-track your success in the fashion ecosystem with precision-engineered assets and global placement strategy.
             </p>
@@ -92,9 +92,12 @@ export const EliteProducts = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <StripeButton productId="model-kit" amount={450} productName="Model Professional Kit" />
-                        <button className="flex-1 px-8 py-4 border border-white/10 text-white camera-hud-text text-[10px] tracking-[0.2em] uppercase hover:bg-white/5 transition-all">
+                        <a 
+                          href="/models/valentina-rossi"
+                          className="flex-1 px-8 py-4 border border-white/10 text-white camera-hud-text text-[10px] tracking-[0.2em] uppercase hover:bg-white/5 transition-all text-center flex items-center justify-center"
+                        >
                             View Sample Portfolio
-                        </button>
+                        </a>
                     </div>
                 </div>
             </motion.div>

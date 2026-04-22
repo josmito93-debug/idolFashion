@@ -14,6 +14,8 @@ export const Hero = () => {
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/assets/20250913_154417.jpg"
         className="absolute inset-0 w-full h-full object-cover brightness-50 opacity-60"
       >
         <source src="/videos/fashion-idol.mp4" type="video/mp4" />

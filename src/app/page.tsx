@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero/Hero";
 import { ApplicationPortal } from "@/components/forms/ApplicationPortal";
 import { EliteProducts } from "@/components/products/EliteProducts";
+import { ModelMarketing } from "@/components/marketing/ModelMarketing";
 
 export default function Home() {
   return (
@@ -10,6 +11,9 @@ export default function Home() {
 
       {/* Main Content: Elite Product Kits */}
       <EliteProducts />
+
+      {/* Why Professional Section */}
+      <ModelMarketing />
 
       {/* Main Content: Intake Lab */}
       <div className="relative z-10 bg-brand-secondary border-t border-white/5">
