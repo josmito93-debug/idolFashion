@@ -34,7 +34,7 @@ export const Hero = () => {
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-           className="flex flex-col items-center translate-y-10 md:translate-y-0"
+           className="flex flex-col items-center translate-y-[-20px] md:translate-y-0"
         >
           <motion.img 
             initial={{ opacity: 0, y: 10 }}
@@ -42,16 +42,16 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-10 md:h-24 mb-4 md:mb-8 object-contain"
+            className="h-10 md:h-24 mb-1 md:mb-8 object-contain"
           />
           <h1 className="text-[115px] md:text-[10rem] lg:text-[14rem] big-text brand-text leading-[0.8] md:leading-[0.8]">
             Idol<br />Fashion
           </h1>
-          <h2 className="brand-text mt-3 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase">
+          <h2 className="brand-text mt-1 md:mt-4 tracking-[0.5em] opacity-80 text-[8px] md:text-base uppercase">
             THE ELITE LAB
           </h2>
           
-          <div className="flex flex-col items-center gap-3 md:gap-8 mt-4 md:mt-12 w-full">
+          <div className="flex flex-col items-center gap-2 md:gap-8 mt-2 md:mt-12 w-full">
             <div className="md:contents flex justify-center w-full">
               <p className="text-[10px] md:text-base opacity-40 leading-relaxed tracking-wider detail-text uppercase text-center font-medium scale-[0.5] md:scale-100 origin-center max-w-none md:max-w-md">
                 Where technical precision meets<br className="md:hidden" /> 
@@ -80,7 +80,7 @@ export const Hero = () => {
             {/* Mobile Download Button - Moved Up */}
             <Link
               href="/login"
-              className="md:hidden -mt-2 flex flex-col items-center group relative z-50 pointer-events-auto"
+              className="md:hidden mt-1 flex flex-col items-center group relative z-50 pointer-events-auto"
             >
               <span className="camera-hud-text text-[6px] opacity-40 mb-0.5 tracking-[0.2em]">CLIENT_ACCESS</span>
               <span className="text-[9px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
