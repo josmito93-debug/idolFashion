@@ -30,7 +30,7 @@ export default function RegisterPage() {
         alert('Identity Registered. Proceed to login.')
         router.push('/login')
       } else {
-        alert(data.error || 'Protocol failure. Try again.')
+        alert(`${data.error}: ${data.details || 'Unknown Protocol Error'}`)
       }
     } catch (err) {
       console.error(err)
