@@ -11,10 +11,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing credentials' }, { status: 400 });
     }
 
-    // 1. Fetch user from Airtable using lowercase 'email'
+    // 1. Fetch user from Airtable using lowercase 'email' comparison
     const records = await tables.users
       .select({
-        filterByFormula: `{email} = '${email}'`,
+        filterByFormula: `LOWER({email}) = '${email.toLowerCase()}'`,
         maxRecords: 1,
       })
       .firstPage();
@@ -27,10 +27,11 @@ export async function POST(req: Request) {
     const userData = userRecord.fields;
 
     // 2. Verify password (field is 'password_hash')
-    const storedPassword = userData['password_hash'] as string;
+    // Check both 'password_hash' and 'Password' just in case
+    const storedPassword = (userData['password_hash'] || userData['Password']) as string;
     
     if (!storedPassword) {
-       return NextResponse.json({ error: 'Account not initialized properly' }, { status: 401 });
+       return NextResponse.json({ error: 'Security credentials missing for this identity' }, { status: 401 });
     }
 
     let isValid = false;
@@ -42,7 +43,7 @@ export async function POST(req: Request) {
     }
 
     if (!isValid) {
-      return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+      return NextResponse.json({ error: 'Passkey mismatch' }, { status: 401 });
     }
 
     // 3. Create Session

@@ -11,10 +11,9 @@ export async function POST(req: Request) {
     }
 
     // 1. Check if user already exists
-    // The field in Airtable is 'email' (lowercase)
     const existingRecords = await tables.users
       .select({
-        filterByFormula: `{email} = '${email}'`,
+        filterByFormula: `LOWER({email}) = '${email.toLowerCase()}'`,
         maxRecords: 1,
       })
       .firstPage();

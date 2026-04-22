@@ -23,10 +23,11 @@ export default function LoginPage() {
         body: JSON.stringify({ email, password })
       })
       
+      const data = await res.json()
       if (res.ok) {
         router.push('/dashboard')
       } else {
-        alert('Invalid credentials. Access denied.')
+        alert(data.error || 'Invalid credentials. Access denied.')
       }
     } catch (err) {
       console.error(err)
