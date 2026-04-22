@@ -70,7 +70,7 @@ export default function ModelPortfoliosSales() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-12 md:h-20 mb-4 md:mb-8 object-contain mt-[-40px]"
+            className="h-12 md:h-20 mb-4 md:mb-8 object-contain mt-[-60px]"
           />
 
           <motion.div
@@ -87,7 +87,7 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="text-5xl md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter"
+            className="text-[64px] md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter"
           >
             OWN YOUR IDENTITY. <br/><span className="text-accent">SCALE YOUR CAREER.</span>
           </motion.h1>
@@ -199,17 +199,17 @@ export default function ModelPortfoliosSales() {
                 {[
                   {
                     title: "Meta Pixel Optimization",
-                    desc: "Tus visitas se convierten en datos. Las marcas te contratan porque puedes demostrar tu alcance real y ROI.",
+                    desc: "Your traffic converted into actionable data. Brands hire you because you prove reach and ROI.",
                     icon: Target
                   },
                   {
                     title: "SEO Visibility",
-                    desc: "Aparece en el radar de agencias internacionales cuando busquen talento en Google.",
+                    desc: "Appear on the radar of international agencies. Be the first result when they search for elite talent.",
                     icon: Search
                   },
                   {
                     title: "Brand Conversion",
-                    desc: "Diseñada para convertir vistas en reservas. Tu identidad digital trabajando 24/7 para ti.",
+                    desc: "Engineered to convert views into high-end bookings. Your digital identity working 24/7.",
                     icon: BarChart3
                   }
                 ].map((item, idx) => (
