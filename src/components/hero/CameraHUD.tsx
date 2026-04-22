@@ -48,7 +48,7 @@ export const CameraHUD = () => {
         </div>
 
         <div className="flex items-center gap-2 md:gap-8 pointer-events-auto">
-          <Link href="/login" className="flex flex-col items-end group">
+          <Link href="/login" className="hidden md:flex flex-col items-end group">
             <span className="camera-hud-text text-[8px] md:text-xs group-hover:text-accent transition-colors">CLIENT_ACCESS</span>
             <span className="text-xs md:text-xl font-mono leading-none border-b border-white/20 group-hover:border-accent transition-all">DOWNLOAD_MY_PHOTOGRAPHY</span>
           </Link>
@@ -79,6 +79,16 @@ export const CameraHUD = () => {
           <div className="absolute inset-0 flex items-center justify-center">
              <div className="w-8 h-[2px] bg-white/20 absolute" />
              <div className="h-8 w-[2px] bg-white/20 absolute" />
+          </div>
+
+          {/* Mobile centered download button - Exactly on the bottom line of focus area */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 md:hidden pointer-events-auto">
+             <Link href="/login" className="flex flex-col items-center group">
+                <span className="camera-hud-text text-[7px] opacity-40 mb-1 tracking-[0.2em]">CLIENT_ACCESS</span>
+                <span className="text-[10px] font-mono tracking-[0.3em] animate-shimmer-gradient border-b border-white/10 group-hover:border-accent transition-all font-bold">
+                   DOWNLOAD MY PHOTOS
+                </span>
+             </Link>
           </div>
         </div>
       </div>
