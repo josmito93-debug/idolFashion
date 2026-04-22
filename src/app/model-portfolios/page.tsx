@@ -86,7 +86,7 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="detail-text text-[10px] md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mb-12 leading-relaxed"
+            className="detail-text text-[9px] md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mb-12 leading-relaxed text-left"
           >
             Traditional portfolios are dead. We build high-performance digital ecosystems that integrate with the world&apos;s most powerful advertising networks. Stop relying on algorithms—own your data.
           </motion.p>
@@ -95,13 +95,13 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col md:flex-row gap-6 justify-start items-center md:items-start"
+            className="flex flex-col md:flex-row gap-6 justify-start items-start md:items-start w-full"
           >
-            <Link href="/register" className="px-12 py-5 bg-white text-black font-mono text-[8px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3">
+            <Link href="/register" className="w-full md:w-auto px-12 py-5 bg-white text-black font-mono text-[8px] uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold group flex items-center justify-center md:justify-start gap-3">
               Initialize Application
               <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/models/valentina-rossi" className="px-12 py-5 border border-white/10 font-mono text-[8px] uppercase tracking-widest hover:bg-white/5 transition-all">
+            <Link href="/models/valentina-rossi" className="w-full md:w-auto px-12 py-5 border border-white/10 font-mono text-[8px] uppercase tracking-widest hover:bg-white/5 transition-all flex items-center justify-center">
               View Sample Portfolio
             </Link>
           </motion.div>

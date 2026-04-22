@@ -69,8 +69,8 @@ export default function AccreditationPage() {
                 <Camera className="w-4 h-4 text-accent" />
                 <span className="camera-hud-text text-[10px] tracking-[0.3em] uppercase text-accent">Media Accreditation Protocol</span>
               </div>
-              <h1 className="text-6xl md:text-8xl brand-text leading-[0.9] mb-8">Registro de <br/><span className="text-accent">Fotógrafos</span></h1>
-              <p className="detail-text text-sm opacity-40 uppercase tracking-[0.2em] leading-relaxed max-w-xl">
+              <h1 className="text-6xl md:text-8xl brand-text leading-[0.9] mb-8 text-left">Registro de <br/><span className="text-accent">Fotógrafos</span></h1>
+              <p className="detail-text text-[9px] md:text-sm opacity-40 uppercase tracking-[0.2em] leading-relaxed max-w-xl text-left">
                 Acreditación oficial para la cobertura visual de alta fidelidad. Acceso exclusivo a áreas restringidas, backstage y pasarela principal.
               </p>
             </motion.div>
