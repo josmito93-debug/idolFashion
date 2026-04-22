@@ -31,9 +31,9 @@ export const EliteProducts = () => {
                 <Sparkles className="w-3 h-3 text-accent" />
                 <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase">Elite Service Tier</span>
             </motion.div>
-            <h2 className="text-6xl md:text-8xl brand-text mb-4">Become a Professional <br/><span className="text-accent">Model</span></h2>
-            <p className="max-w-2xl mx-auto detail-text opacity-40 text-sm md:text-base leading-relaxed uppercase tracking-widest">
-                Our ultra-premium development kits are designed to fast-track your success in the fashion ecosystem with precision-engineered assets and global placement strategy.
+            <h2 className="text-6xl md:text-8xl brand-text mb-4">Elite Model <br/><span className="text-accent">Development</span></h2>
+            <p className="max-w-3xl mx-auto detail-text opacity-40 text-sm md:text-base leading-relaxed uppercase tracking-widest">
+                Our ultra-premium development kits are engineered to scale your professional identity with precision assets and a global industry placement strategy.
             </p>
         </div>
 
@@ -52,13 +52,13 @@ export const EliteProducts = () => {
                     <div className="flex items-center gap-4 py-2">
                         <span className="text-3xl brand-text text-accent">$450</span>
                         <div className="h-[20px] w-[1px] bg-white/20" />
-                        <span className="camera-hud-text text-[10px] opacity-40">PAYABLE IN 2 INSTALLMENTS</span>
+                        <span className="camera-hud-text text-[10px] opacity-40 uppercase tracking-widest">Two Installment Plan Available</span>
                     </div>
                 </div>
 
                 <div className="space-y-4">
                     <p className="detail-text text-sm opacity-60 leading-relaxed uppercase tracking-widest">
-                        We guarantee you will be booked for big events if you follow our steps. You must have this to be successful, appear in magazines, and stay healthy in the fashion industry.
+                        We provide the strategic infrastructure required to secure high-tier bookings and establish a permanent, verified presence in the global fashion ecosystem.
                     </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -162,10 +162,10 @@ export const EliteProducts = () => {
                     <div className="absolute inset-0 bg-brand-secondary/40" />
                     <div className="absolute bottom-12 left-12">
                         <p className="big-text text-8xl md:text-9xl opacity-10 absolute -top-16 -left-8 pointer-events-none">DESIGN</p>
-                        <h4 className="brand-text text-5xl mb-4">Designer Launch</h4>
+                        <h4 className="brand-text text-5xl mb-4">Couture Scale</h4>
                         <div className="flex items-center gap-3">
                              <div className="h-[1px] w-8 bg-accent" />
-                             <span className="camera-hud-text text-[9px] tracking-[0.3em] uppercase">Industry Scale Up</span>
+                             <span className="camera-hud-text text-[9px] tracking-[0.3em] uppercase">International Placement</span>
                         </div>
                     </div>
                 </div>
@@ -173,10 +173,10 @@ export const EliteProducts = () => {
                 <div className="p-8 md:p-16 flex flex-col justify-center">
                     <div className="mb-8">
                         <div className="flex items-baseline gap-4 mb-4">
-                            <span className="text-4xl brand-text text-white">Full Production Kit</span>
+                            <span className="text-4xl brand-text text-white">Full Production Ecosystem</span>
                         </div>
                         <p className="detail-text text-sm opacity-40 uppercase tracking-widest leading-relaxed">
-                            Complete end-to-end garment ecosystem: from patterns to international runway placement.
+                            We provide the manufacturing infrastructure and media placement required to launch and scale a globally recognized fashion house.
                         </p>
                     </div>
 

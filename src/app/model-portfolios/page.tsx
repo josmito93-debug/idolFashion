@@ -79,16 +79,16 @@ export default function ModelPortfoliosSales() {
             transition={{ delay: 0.1 }}
             className="text-7xl md:text-[120px] brand-text leading-[0.9] mb-8"
           >
-            OWN YOUR <br/><span className="text-accent">DOMAIN.</span>
+            OWN YOUR IDENTITY. <br/><span className="text-accent">SCALE YOUR CAREER.</span>
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="detail-text text-sm md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="detail-text text-sm md:text-lg opacity-40 uppercase tracking-[0.3em] max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Stop relying on social media algorithms. Build a high-performance digital identity designed for the elite fashion industry.
+            Traditional portfolios are dead. We build high-performance digital ecosystems that integrate with the world&apos;s most powerful advertising networks. Stop relying on algorithms—own your data.
           </motion.p>
 
           <motion.div
@@ -178,9 +178,9 @@ export default function ModelPortfoliosSales() {
                   <Zap className="w-4 h-4 text-accent" />
                   <span className="camera-hud-text text-[10px] tracking-[0.3em] uppercase text-accent">The Conversion Edge</span>
                 </motion.div>
-                <h2 className="text-6xl md:text-8xl brand-text leading-[0.9] mb-8">Data-Driven <br/><span className="text-accent">Success.</span></h2>
+                <h2 className="text-6xl md:text-8xl brand-text leading-[0.9] mb-8">Convert Views <br/><span className="text-accent">Into Contracts.</span></h2>
                 <p className="detail-text text-sm md:text-base opacity-40 uppercase tracking-[0.2em] leading-relaxed max-w-xl">
-                  Una página web conectada con el Meta Pixel no es solo un portafolio; es tu motor de ventas personal. Significa generar más visibilidad, demostrar tu valor a las marcas y asegurar contratos de alto nivel.
+                  Your portfolio is no longer just a gallery; it&apos;s your personal sales engine. With Meta Pixel integration, you prove your market value to brands with hard data, securing high-end bookings and consistent ROI.
                 </p>
               </div>
 
