@@ -68,7 +68,7 @@ export default function ModelPortfoliosSales() {
             muted 
             loop 
             playsInline 
-            className="w-full h-full object-cover opacity-40 grayscale"
+            className="w-full h-full object-cover opacity-40"
           >
             <source src="/videos/hero-model-portfolios.mp4" type="video/mp4" />
           </video>

@@ -24,7 +24,7 @@ export const Hero = () => {
         poster="/assets/20250913_154417.jpg"
         className="absolute inset-0 w-full h-full object-cover brightness-50 opacity-60"
       >
-        <source src="/videos/fashion-idol.mp4" type="video/mp4" />
+        <source src="/videos/hero-model-portfolios.mp4" type="video/mp4" />
       </video>
 
       {/* Aesthetic Overlays */}
