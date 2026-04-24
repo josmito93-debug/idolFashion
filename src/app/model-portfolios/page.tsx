@@ -60,7 +60,21 @@ export default function ModelPortfoliosSales() {
       
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 opacity-10 pointer-events-none" 
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="w-full h-full object-cover opacity-40 grayscale"
+          >
+            <source src="/videos/fashion-idol.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-brand-secondary/60 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="absolute inset-0 opacity-10 pointer-events-none z-[1]" 
              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center translate-y-[10px] md:translate-y-0">
