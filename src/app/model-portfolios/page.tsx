@@ -14,7 +14,8 @@ import {
   ChevronRight,
   Monitor,
   Smartphone,
-  CheckCircle2
+  CheckCircle2,
+  ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
 import { CameraHUD } from '@/components/hero/CameraHUD'
