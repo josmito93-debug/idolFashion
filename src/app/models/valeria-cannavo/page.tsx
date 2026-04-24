@@ -177,7 +177,7 @@ export default function ValeriaPortfolio() {
               </div>
               <div className="flex flex-col items-end gap-1 text-right">
                  <span className="font-modal text-[8px] md:text-[10px] tracking-[0.4em] uppercase opacity-60">Nodes</span>
-                 <span className="font-modal text-[10px] md:text-xs tracking-[0.2em] uppercase">Milan // Miami // Caracas</span>
+                 <span className="font-modal text-[10px] md:text-xs tracking-[0.2em] uppercase">Milan / Miami / Caracas</span>
               </div>
            </div>
            <div className="flex justify-between items-end">
@@ -247,9 +247,9 @@ export default function ValeriaPortfolio() {
                 Engineering high-conversion brand partnerships through surgical audience targeting and elite digital identity.
               </p>
               <div className="pt-4">
-                 <button className="group relative px-10 py-5 bg-black text-white overflow-hidden rounded-full transition-all hover:scale-105 active:scale-95">
+                 <button className="group relative px-10 py-5 bg-black text-white overflow-hidden transition-all hover:scale-105 active:scale-95">
                     <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                    <span className="relative z-10 font-modal text-[10px] tracking-[0.3em] uppercase">Initialize Connection // Contact</span>
+                    <span className="relative z-10 font-modal text-[10px] tracking-[0.3em] uppercase">Connect / Secure Identity</span>
                  </button>
               </div>
            </div>
@@ -261,7 +261,7 @@ export default function ValeriaPortfolio() {
                       <div className="p-3 rounded-xl bg-zinc-50 text-zinc-400 group-hover:text-black transition-colors">
                          <metric.icon className="w-5 h-5" />
                       </div>
-                      <span className="font-modal text-[8px] tracking-[0.4em] uppercase opacity-20 group-hover:opacity-100 transition-opacity">0{idx + 1} // DATA</span>
+                      <span className="font-modal text-[8px] tracking-[0.4em] uppercase opacity-20 group-hover:opacity-100 transition-opacity">{`0${idx + 1} / DATA`}</span>
                    </div>
                    <div className="space-y-2">
                       <p className="font-modal text-[10px] opacity-30 uppercase tracking-[0.2em]">{metric.label}</p>
@@ -304,17 +304,22 @@ export default function ValeriaPortfolio() {
                       transition={{ delay: idx * 0.1 }}
                       className="space-y-2 border-l border-black/5 pl-6"
                     >
+                      <div className="camera-hud-text text-[10px] opacity-30 uppercase">[ PROTOCOL_HUD ]</div>
                       <p className="font-modal text-[10px] opacity-30 uppercase tracking-[0.2em]">{label}</p>
                       <p className="text-2xl md:text-4xl uppercase tracking-tighter font-light">{value}</p>
                     </motion.div>
                   ))}
                </div>
 
-               <div className="pt-12">
-                  <button className="px-12 py-5 bg-black text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-zinc-800 transition-all flex items-center gap-4">
-                     Book Representation <ArrowRight className="w-4 h-4" />
-                  </button>
-               </div>
+               <Link href="/register" className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all group flex items-center gap-3 min-w-[280px] justify-center">
+                  <span>Launch Your Elite Identity</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+               </Link>
+            
+               <Link href="/models/valeria-cannavo" className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center">
+                  <span>View Live Case Study</span>
+                  <Globe2 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+               </Link>
             </div>
 
             <GalleryImage 
