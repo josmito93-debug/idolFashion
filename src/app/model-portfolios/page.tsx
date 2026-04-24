@@ -109,11 +109,16 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-col md:flex-row gap-6 justify-center items-center"
+            className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mt-4"
           >
-            <Link href="/register" className="px-3 py-1.5 bg-white text-black font-mono text-[7px] md:text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all font-bold group flex items-center gap-3 min-w-[170px] md:min-w-[280px] justify-center">
+            <Link href="/register" className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all group flex items-center gap-3 min-w-[280px] justify-center rounded-full">
               <span>Initialize Deployment</span>
-              <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            
+            <Link href="/models/valeria-cannavo" className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center rounded-full">
+              <span>View Live Example</span>
+              <Globe2 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             </Link>
           </motion.div>
         </div>

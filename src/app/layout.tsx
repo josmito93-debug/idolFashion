@@ -6,6 +6,25 @@ import { LoadingCalibration } from "@/components/ui/LoadingCalibration";
 export const metadata: Metadata = {
   title: "Idol Fashion: The Elite Lab",
   description: "Advanced model, designer, and photographer technical training and management. Where science meets high fashion.",
+  openGraph: {
+    title: "Idol Fashion: The Elite Lab",
+    description: "Advanced model, designer, and photographer technical training and management.",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "Idol Fashion Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Idol Fashion: The Elite Lab",
+    description: "Advanced model, designer, and photographer technical training and management.",
+    images: ["/assets/og-image.png"],
+  },
 };
 
 export default function RootLayout({

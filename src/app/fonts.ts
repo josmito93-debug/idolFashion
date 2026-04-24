@@ -31,3 +31,18 @@ export const domica = localFont({
   src: '../../public/fonts/details font/DomicaSauvage/Web-TT/Domica Sauvage-Regular.ttf',
   variable: '--font-domica',
 })
+
+export const calya = localFont({
+  src: '../../public/fonts/editorial/Calya.ttf',
+  variable: '--font-calya',
+})
+
+export const glamour = localFont({
+  src: '../../public/fonts/editorial/Glamour.ttf',
+  variable: '--font-glamour',
+})
+
+export const modal = localFont({
+  src: '../../public/fonts/editorial/Modal.ttf',
+  variable: '--font-modal',
+})
