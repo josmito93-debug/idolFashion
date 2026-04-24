@@ -70,13 +70,10 @@ export default function ModelPortfoliosSales() {
             playsInline 
             className="w-full h-full object-cover opacity-40 grayscale"
           >
-            <source src="/videos/fashion-idol.mp4" type="video/mp4" />
+            <source src="/videos/hero-model-portfolios.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-brand-secondary/60 backdrop-blur-[2px]" />
         </div>
-
-        <div className="absolute inset-0 opacity-10 pointer-events-none z-[1]" 
-             style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #333 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center translate-y-[10px] md:translate-y-0">
           <motion.img 
@@ -161,7 +158,15 @@ export default function ModelPortfoliosSales() {
               </div>
               <p className="camera-hud-text text-xs uppercase tracking-widest opacity-60">Cross-Platform Technical Architecture</p>
             </div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-1000" />
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-1000"
+            >
+              <source src="/videos/los-angeles.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
