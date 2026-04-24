@@ -7,9 +7,9 @@ import { StripeButton } from '../checkout/StripeButton'
 import Link from 'next/link'
 
 const MODEL_VIDEOS = [
-  '/assets/DFW%209TH%20PROMO%201304%20b.mp4',
-  '/assets/DFW%209TH%20PROMO%201304%20c.mp4',
-  '/assets/lv_0_20251013183505.mp4'
+  '/assets/VID_20260415_193956_845.mp4',
+  '/assets/VID_20260415_194015_223.mp4',
+  '/assets/VID-20260413-WA0050.mp4'
 ]
 
 export const EliteProducts = () => {
@@ -119,7 +119,7 @@ export const EliteProducts = () => {
                             muted 
                             loop 
                             playsInline 
-                            className="absolute inset-0 w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700 hover:scale-110"
+                            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 hover:scale-110"
                         >
                             <source src={video} type="video/mp4" />
                         </video>
