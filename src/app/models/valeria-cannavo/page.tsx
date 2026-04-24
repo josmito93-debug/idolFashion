@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import { calya, glamour, modal } from '@/app/fonts'
 import { Instagram, Mail, Globe, ShieldCheck, Zap, ArrowRight, ChevronDown, X, BarChart3, Users, Target, MessageSquare } from 'lucide-react'
 
