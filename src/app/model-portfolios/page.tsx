@@ -19,6 +19,7 @@ import {
 import Link from 'next/link'
 import { CameraHUD } from '@/components/hero/CameraHUD'
 import { EliteProducts } from '@/components/products/EliteProducts'
+import { StadiumWaveGrid } from '@/components/ui/StadiumWaveGrid'
 
 const FEATURES = [
   {
@@ -123,14 +124,20 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mt-4"
+            className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center mt-4"
           >
-            <Link href="/register" className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all group flex items-center gap-3 min-w-[280px] justify-center">
-              <span>Launch Your Elite Identity</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Link 
+              href="/register" 
+              className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
+            >
+              <span className="relative z-10">Launch Your Elite Identity</span>
+              <StadiumWaveGrid />
             </Link>
             
-            <Link href="/models/valeria-cannavo" className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center">
+            <Link 
+              href="/models/valeria-cannavo" 
+              className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center"
+            >
               <span>View Live Case Study</span>
               <Globe2 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             </Link>
