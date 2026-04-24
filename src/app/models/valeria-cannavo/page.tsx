@@ -84,7 +84,7 @@ const GalleryImage = ({ src, className, idx, onClick }: { src: string, className
     <motion.div 
       ref={ref}
       style={{ filter: grayscale, scale, opacity }}
-      className={`relative overflow-hidden rounded-sm bg-zinc-100 cursor-zoom-in group ${className}`}
+      className={`relative overflow-hidden rounded-none bg-zinc-100 cursor-zoom-in group ${className}`}
       onClick={onClick}
     >
       <img 
@@ -94,7 +94,7 @@ const GalleryImage = ({ src, className, idx, onClick }: { src: string, className
       />
       {/* Small Corner CTA */}
       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-         <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-md border border-black/5 rounded-full">
+         <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-md border border-black/5 rounded-none">
             <span className="font-modal text-[8px] tracking-[0.2em] uppercase text-black">Expand Asset</span>
             <Zap className="w-2.5 h-2.5 text-black" />
          </div>
@@ -127,7 +127,7 @@ const InfiniteCarousel = ({ images, onImageClick }: { images: string[], onImageC
                alt="Carousel Asset"
              />
              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all">
-                <div className="p-2 bg-white rounded-full">
+                <div className="p-2 bg-white rounded-none">
                   <Zap className="w-3 h-3 text-black" />
                 </div>
              </div>
@@ -255,11 +255,11 @@ export default function ValeriaPortfolio() {
               </div>
            </div>
 
-           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100 overflow-hidden rounded-2xl">
+           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100 overflow-hidden rounded-none">
               {VALERIA_DATA.metrics.map((metric, idx) => (
                 <div key={idx} className="bg-white p-12 space-y-8 group hover:bg-zinc-50 transition-colors">
                    <div className="flex justify-between items-start">
-                      <div className="p-3 rounded-xl bg-zinc-50 text-zinc-400 group-hover:text-black transition-colors">
+                      <div className="p-3 rounded-none bg-zinc-50 text-zinc-400 group-hover:text-black transition-colors">
                          <metric.icon className="w-5 h-5" />
                       </div>
                       <span className="font-modal text-[8px] tracking-[0.4em] uppercase opacity-20 group-hover:opacity-100 transition-opacity">{`0${idx + 1} / DATA`}</span>

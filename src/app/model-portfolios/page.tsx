@@ -11,11 +11,10 @@ import {
   Target, 
   Mail, 
   Upload, 
-  ChevronRight,
+  ArrowRight,
   Monitor,
   Smartphone,
-  CheckCircle2,
-  ArrowRight
+  CheckCircle2
 } from 'lucide-react'
 import Link from 'next/link'
 import { CameraHUD } from '@/components/hero/CameraHUD'
@@ -56,7 +55,7 @@ const FEATURES = [
 
 export default function ModelPortfoliosSales() {
   return (
-    <main className="min-h-screen bg-brand-secondary text-white selection:bg-accent selection:text-white">
+    <main className="min-h-screen bg-brand-secondary text-white selection:bg-accent selection:text-white overflow-x-hidden">
       <CameraHUD />
       
       {/* Hero Section */}
@@ -78,7 +77,7 @@ export default function ModelPortfoliosSales() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none border border-accent/20 bg-accent/5 mb-4"
           >
             <Zap className="w-3 h-3 text-accent" />
             <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase text-accent">Professional Infrastructure</span>
@@ -112,13 +111,13 @@ export default function ModelPortfoliosSales() {
             transition={{ delay: 0.7 }}
             className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mt-4"
           >
-            <Link href="/register" className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all group flex items-center gap-3 min-w-[280px] justify-center rounded-full">
-              <span>Initialize Deployment</span>
+            <Link href="/register" className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all group flex items-center gap-3 min-w-[280px] justify-center">
+              <span>Launch Your Elite Identity</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             
-            <Link href="/models/valeria-cannavo" className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center rounded-full">
-              <span>View Live Example</span>
+            <Link href="/models/valeria-cannavo" className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center">
+              <span>View Live Case Study</span>
               <Globe2 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             </Link>
           </motion.div>
@@ -128,20 +127,19 @@ export default function ModelPortfoliosSales() {
       {/* Visual Teaser */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <div className="relative aspect-video rounded-3xl border border-white/10 bg-black overflow-hidden group">
+          <div className="relative aspect-video rounded-none border border-white/10 bg-black overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
             <div className="absolute bottom-12 left-12 z-20 space-y-4">
               <div className="flex gap-4">
-                <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+                <div className="p-3 rounded-none bg-white/10 backdrop-blur-md border border-white/10">
                   <Monitor className="w-5 h-5" />
                 </div>
-                <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+                <div className="p-3 rounded-none bg-white/10 backdrop-blur-md border border-white/10">
                   <Smartphone className="w-5 h-5" />
                 </div>
               </div>
               <p className="camera-hud-text text-xs uppercase tracking-widest opacity-60">Cross-Platform Technical Architecture</p>
             </div>
-            {/* Mock Image Placeholder */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-1000" />
           </div>
         </div>
@@ -162,9 +160,9 @@ export default function ModelPortfoliosSales() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="space-y-6 p-8 rounded-2xl border border-white/5 bg-black/40 hover:border-accent/40 transition-colors group"
+                className="space-y-6 p-8 rounded-none border border-white/5 bg-black/40 hover:border-accent/40 transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center border border-accent/20 group-hover:bg-accent/20 transition-all">
+                <div className="w-12 h-12 rounded-none bg-accent/10 flex items-center justify-center border border-accent/20 group-hover:bg-accent/20 transition-all">
                   <feature.icon className="w-6 h-6 text-accent" />
                 </div>
                 <div className="space-y-3">
@@ -190,7 +188,7 @@ export default function ModelPortfoliosSales() {
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-accent/20 bg-accent/5 mb-8"
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-none border border-accent/20 bg-accent/5 mb-8"
                 >
                   <Zap className="w-4 h-4 text-accent" />
                   <span className="camera-hud-text text-[10px] tracking-[0.3em] uppercase text-accent">The Conversion Edge</span>
@@ -224,9 +222,9 @@ export default function ModelPortfoliosSales() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex gap-6 p-6 rounded-2xl bg-white/5 border border-white/5 group hover:border-accent/30 transition-all"
+                    className="flex gap-6 p-6 rounded-none bg-white/5 border border-white/5 group hover:border-accent/30 transition-all"
                   >
-                    <div className="p-3 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
+                    <div className="p-3 rounded-none bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
                       <item.icon className="w-5 h-5" />
                     </div>
                     <div className="space-y-1">
@@ -236,17 +234,6 @@ export default function ModelPortfoliosSales() {
                   </motion.div>
                 ))}
               </div>
-
-              <div className="pt-8 flex items-center gap-8">
-                 <div className="flex -space-x-3">
-                    {[1,2,3,4].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-zinc-800" />
-                    ))}
-                 </div>
-                 <p className="camera-hud-text text-[10px] opacity-40 uppercase tracking-widest">
-                    Joined by 400+ Elite Models <br/> across Miami & Milan
-                 </p>
-              </div>
             </div>
 
             {/* Right: Visual Data HUD */}
@@ -255,8 +242,8 @@ export default function ModelPortfoliosSales() {
               whileInView={{ opacity: 1, scale: 1 }}
               className="relative"
             >
-               <div className="aspect-square rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-1">
-                  <div className="h-full w-full rounded-[1.4rem] bg-brand-secondary overflow-hidden relative p-8 md:p-12 flex flex-col justify-between border border-white/5">
+               <div className="aspect-square rounded-none border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-1">
+                  <div className="h-full w-full rounded-none bg-brand-secondary overflow-hidden relative p-8 md:p-12 flex flex-col justify-between border border-white/5">
                      <div className="flex justify-between items-start">
                         <div className="space-y-1">
                           <div className="camera-hud-text text-[10px] opacity-30 uppercase">[ PROTOCOL_HUD ]</div>
@@ -265,9 +252,8 @@ export default function ModelPortfoliosSales() {
                         <Globe2 className="w-8 h-8 opacity-20 text-accent" />
                      </div>
 
-                     {/* Central Data Viz */}
                      <div className="flex-1 flex flex-col justify-center gap-12">
-                        <div className="relative h-40 w-full border border-white/5 rounded-2xl bg-black/40 flex items-center justify-center overflow-hidden">
+                        <div className="relative h-40 w-full border border-white/5 rounded-none bg-black/40 flex items-center justify-center overflow-hidden">
                            <div className="absolute inset-0 bg-accent/5 animate-pulse" />
                            <div className="flex gap-1.5 items-end h-24 relative z-10">
                               {[40, 70, 45, 90, 65, 80, 55, 100, 30, 85, 45, 75].map((h, i) => (
@@ -276,23 +262,23 @@ export default function ModelPortfoliosSales() {
                                   initial={{ height: 0 }}
                                   whileInView={{ height: `${h}%` }}
                                   transition={{ duration: 1, delay: i * 0.05 }}
-                                  className="w-2.5 bg-accent/40 rounded-t-sm" 
+                                  className="w-2.5 bg-accent/40 rounded-none" 
                                 />
                               ))}
                            </div>
                            <div className="absolute bottom-4 right-4 flex items-center gap-2">
-                             <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                             <div className="w-2 h-2 rounded-none bg-accent animate-ping" />
                              <span className="camera-hud-text text-[8px] text-accent uppercase tracking-widest">Live ROI Tracking</span>
                            </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-6">
-                           <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
+                           <div className="p-6 rounded-none bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
                               <p className="camera-hud-text text-[10px] opacity-30 uppercase mb-2">Total Digital Reach</p>
                               <p className="detail-text text-3xl uppercase tracking-tighter">1.2M +</p>
                               <p className="text-[8px] text-accent camera-hud-text mt-2">↑ 24% THIS MONTH</p>
                            </div>
-                           <div className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
+                           <div className="p-6 rounded-none bg-white/5 border border-white/5 hover:border-accent/20 transition-all">
                               <p className="camera-hud-text text-[10px] opacity-30 uppercase mb-2">Booking Conversion</p>
                               <p className="detail-text text-3xl uppercase tracking-tighter">+84.2%</p>
                               <p className="text-[8px] text-accent camera-hud-text mt-2">OPTIMIZED BY PIXEL</p>
@@ -310,10 +296,9 @@ export default function ModelPortfoliosSales() {
                   </div>
                </div>
 
-               {/* Floating Pixel Status */}
-               <div className="absolute -top-6 -right-6 p-6 rounded-2xl bg-black border border-accent/30 backdrop-blur-xl shadow-2xl z-20">
+               <div className="absolute -top-6 -right-6 p-6 rounded-none bg-black border border-accent/30 backdrop-blur-xl shadow-2xl z-20">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <div className="w-2 h-2 rounded-none bg-accent" />
                     <p className="camera-hud-text text-accent text-[10px] uppercase tracking-widest">Pixel Engine</p>
                   </div>
                   <p className="detail-text text-white text-xs uppercase font-bold tracking-widest">ACTIVE / COLLECTING ROI DATA</p>
@@ -324,14 +309,18 @@ export default function ModelPortfoliosSales() {
         </div>
       </section>
 
-
-      {/* Pricing and Kits Section */}
       <EliteProducts />
 
-      {/* Footer */}
       <footer className="py-12 border-t border-white/5 text-center">
          <p className="camera-hud-text text-[10px] opacity-20 uppercase tracking-[0.5em]">Idol Fashion © 2026 // The Elite Lab // Miami HQ</p>
       </footer>
+
+      <style jsx global>{`
+        .brand-text { font-family: var(--font-gc-vank); }
+        .camera-hud-text { font-family: var(--font-mono); }
+        .detail-text { font-family: var(--font-inter); }
+        .font-modal { font-family: var(--font-modal); }
+      `}</style>
     </main>
   )
 }
