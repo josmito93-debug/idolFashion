@@ -6,8 +6,8 @@ import { ArrowRight, Zap, ShieldCheck, Target } from 'lucide-react'
 import Link from 'next/link'
 
 const TEASER_VIDEOS = [
-  '/assets/DFW%209TH%20PROMO%201304%20b.mp4',
-  '/assets/DFW%209TH%20PROMO%201304%20c.mp4',
+  '/assets/DFW_9TH_PROMO_1304_b.mp4',
+  '/assets/DFW_9TH_PROMO_1304_c.mp4',
   '/assets/lv_0_20251013183505.mp4'
 ]
 

@@ -24,7 +24,7 @@ const MODEL_DATA = {
     email: "booking@valentinarossi.com"
   },
   photos: [
-    "/assets/20250913_154417.jpg",
+    "/assets/hero_poster.jpg",
     "/assets/20250913_154113.jpg",
     "/assets/20251016_195343.jpg",
     "/assets/20250910_163940.jpg",
