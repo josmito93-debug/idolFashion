@@ -4,7 +4,7 @@ import "./globals.css";
 import { LoadingCalibration } from "@/components/ui/LoadingCalibration";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://idolfashion.miami'),
+  metadataBase: new URL('https://idolfashiontheelitelab.com'),
   title: "Idol Fashion: The Elite Lab",
   description: "Advanced model, designer, and photographer technical training and management. Where science meets high fashion.",
   openGraph: {

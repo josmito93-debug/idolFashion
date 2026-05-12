@@ -37,8 +37,8 @@ export async function POST(req: NextRequest) {
     }
 
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Idol Fashion HQ <registrations@idolfashion.miami>', // This should be a verified domain in Resend
-      to: [data.email, 'jose@idolfashion.miami'], // Send to candidate and HQ
+      from: 'Idol Fashion HQ <registrations@idolfashiontheelitelab.com>', // Correct domain
+      to: [data.email, 'jose@idolfashiontheelitelab.com'], // Send to candidate and HQ
       subject: `PROTOCOL INITIATED: ${data.fullName} [${data.role.toUpperCase()}]`,
       html: `
         <div style="font-family: monospace; background-color: #000; color: #fff; padding: 40px; border: 1px solid #e831e3;">
