@@ -54,7 +54,8 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
       hips: '',
       hair: ''
     },
-    fiscalStatus: 'contractor'
+    fiscalStatus: 'contractor',
+    idNumber: ''
   })
 
   const updateField = (field: string, value: any) => {
@@ -95,7 +96,8 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
         hips: '',
         hair: ''
       },
-      fiscalStatus: 'contractor'
+      fiscalStatus: 'contractor',
+      idNumber: ''
     })
   }
 
@@ -221,6 +223,17 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         value={formData.fullName}
                         onChange={(e) => updateField('fullName', e.target.value)}
                         className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="camera-hud-text mb-2">DNI / Pasaporte</label>
+                      <input 
+                        type="text" 
+                        required 
+                        value={formData.idNumber}
+                        onChange={(e) => updateField('idNumber', e.target.value)}
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                        placeholder="ID NUMBER"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-4">

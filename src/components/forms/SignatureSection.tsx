@@ -77,26 +77,32 @@ export const SignatureSection = ({ role, formData, onComplete }: SignatureSectio
         </div>
       </div>
 
-      <div className="bg-white/[0.02] border border-white/5 p-8 mb-8 max-h-80 overflow-y-auto font-mono text-[10px] space-y-4 opacity-70 leading-relaxed uppercase tracking-tighter">
-        {role === 'model' ? (
+      <div className="bg-white/[0.02] border border-white/5 p-8 mb-8 max-h-80 overflow-y-auto font-mono text-[9px] space-y-4 opacity-70 leading-relaxed uppercase tracking-tighter text-justify">
+        <p className="brand-text text-lg text-accent mb-4">
+          {role === 'designer' ? 'CONTRATO DE PARTICIPACIÓN PARA DISEÑADORES' : 
+           role === 'model' ? 'CONTRATO INTEGRAL DE PARTICIPACIÓN (TALENT)' : 
+           'ACUERDO DE COLABORACIÓN Y LIBERACIÓN DE RESPONSABILIDAD'}
+        </p>
+        
+        <p><span className="text-white/80">I. DISPOSICIONES FINANCIERAS:</span> Todos los pagos y depósitos son estrictamente no reembolsables. No se emitirán créditos bajo ninguna circunstancia.</p>
+        
+        <p><span className="text-white/80">II. RESPONSABILIDAD:</span> LA COMPAÑÍA no responde por lesiones o pérdida de propiedad. {role !== 'designer' && role !== 'model' && 'No se asume responsabilidad por equipos profesionales (cámaras, lentes).'} EL PARTICIPANTE indemnizará a LA COMPAÑÍA.</p>
+        
+        <p><span className="text-white/80">III. CONFIDENCIALIDAD (NDA):</span> Se prohíbe divulgar secretos comerciales, diseños no publicados o logística a terceros o redes sociales.</p>
+        
+        {role === 'designer' ? (
           <>
-            <p className="brand-text text-lg text-accent mb-4">IDOL JOSE GROUP LLC (IDOL FASHION / DORAL FASHION WEEK)</p>
-            <p><span className="text-white/80">A. Consentimiento de Menores de Edad:</span> En cumplimiento con las leyes del Estado de Florida, si el modelo es menor de 18 años, este contrato debe ser firmado por su padre, madre o tutor legal. Idol Jose Group LLC no se hace responsable de las acciones o seguridad del menor fuera de las actividades coordinadas.</p>
-            <p><span className="text-white/80">B. Cesión de Derechos de Imagen:</span> El Modelo cede de manera irrevocable y gratuita a Idol Jose Group LLC el derecho de utilizar su imagen, voz y nombre obtenidos durante las actividades de la empresa en publicidad, redes sociales y revistas (Doral Fashion Week Magazine/Doral Business City).</p>
-            <p><span className="text-white/80">C. Confidencialidad (Non-Disclosure):</span> El Modelo se compromete a no divulgar información interna o procesos de producción. Comentarios difamatorios podrán acarrear acciones legales por daños a la reputación corporativa.</p>
-            <p><span className="text-white/80">D. Política de "No-Show" y Cancelaciones:</span> El compromiso es vinculante. Inasistencia sin causa de fuerza mayor (No-Show) aceptará una penalidad económica de $100 USD por concepto de gastos administrativos.</p>
-            <p><span className="text-white/80">E. Relación Independiente:</span> Este registro no constituye una relación de empleo directo bajo las leyes laborales de Florida, sino una relación de contratista independiente.</p>
+            <p><span className="text-white/80">IV. PROPIEDAD INTELECTUAL:</span> El Diseñador garantiza originalidad y asume responsabilidad total ante reclamos por plagio.</p>
+            <p><span className="text-white/80">V. LOGÍSTICA:</span> El seguro de las piezas es responsabilidad del Diseñador. El incumplimiento de horarios resultará en exclusión.</p>
           </>
         ) : (
           <>
-            <p className="brand-text text-lg text-accent mb-4">REGISTRO Y ACUERDO DE COLABORACIÓN PROFESIONAL - IDOL JOSE GROUP LLC</p>
-            <p><span className="text-white/80">A. Confidencialidad y Lealtad:</span> El colaborador se compromete a mantener estricta confidencialidad sobre logística, bases de datos de clientes y diseños. Queda prohibida la divulgación de material interno sin autorización.</p>
-            <p><span className="text-white/80">B. Responsabilidades y Tareas:</span> El colaborador se compromete a cumplir con las tareas asignadas de manera responsable y puntual. El incumplimiento causará la baja inmediata.</p>
-            <p><span className="text-white/80">C. Código de Vestimenta (Dress Code):</span> El colaborador debe proyectar excelencia. Se compromete a seguir el Dress Code establecido (ej. Total Black, Uniforme de Staff o Editorial).</p>
-            <p><span className="text-white/80">D. Uso de Imagen:</span> Autorizo a la entidad a utilizar fotografías o videos de mi persona desempeñando mis funciones para fines promocionales o memorias del evento.</p>
-            <p><span className="text-white/80">E. Carácter Personal de la Relación:</span> Este registro es estrictamente personal. El colaborador actúa bajo su propia responsabilidad civil.</p>
+            <p><span className="text-white/80">IV. DERECHOS DE IMAGEN:</span> Uso irrevocable y global de imagen/voz con fines comerciales. {role !== 'model' && 'Material capturado se considera "obra por encargo" (Work-for-Hire).'}</p>
+            <p><span className="text-white/80">V. ESTATUS:</span> EL PARTICIPANTE actúa como agente independiente (voluntario/prensa/contratista) y no como empleado.</p>
           </>
         )}
+        
+        <p className="mt-4 border-t border-white/10 pt-4 italic">Al firmar digitalmente, usted confirma que ha leído y acepta todos los términos regidos por las leyes del Estado de Florida.</p>
       </div>
 
       <div className="flex flex-col items-center">
