@@ -188,27 +188,27 @@ export const ApplicationPDF = ({ data, ownerSignature, logoBase64 }: Application
           </View>
         )}
 
-        {/* III. TERMS */}
+        {/* III. FINANCIAL & LIABILITY */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>III. Terms of Engagement</Text>
+          <Text style={styles.sectionTitle}>III. Financial & Liability Disclosures</Text>
+          <Text style={styles.boldLegalText}>NON-REFUNDABLE PAYMENTS:</Text>
           <Text style={styles.legalText}>
-            {isAccreditation 
-              ? "The Media Representative agrees to maintain strict confidentiality regarding all unreleased collections and production logistics. Unauthorized backstage documentation or real-time broadcasting of restricted areas is prohibited. Full credit to IDOL JOSE GROUP LLC is required for all published material."
-              : "The Talent/Contractor grants IDOL JOSE GROUP LLC irrevocable rights to use their image and likeness for promotional purposes. Talent acknowledges status as an Independent Contractor. Strict compliance with the 'No-Show' policy and confidentiality protocols is a mandatory condition of this Agreement."
-            }
+            ALL PAYMENTS, FEES, AND DEPOSITS MADE TO IDOL JOSE GROUP LLC ARE STRICTLY NON-REFUNDABLE. NO REFUNDS OR CREDITS SHALL BE ISSUED UNDER ANY CIRCUMSTANCES.
+          </Text>
+          <Text style={styles.boldLegalText}>LIMITATION OF LIABILITY:</Text>
+          <Text style={styles.legalText}>
+            IDOL JOSE GROUP LLC SHALL NOT BE HELD LIABLE FOR PERSONAL INJURY OR PROPERTY LOSS DURING PERFORMANCE. THE UNDERSIGNED AGREES TO INDEMNIFY THE COMPANY FROM ALL CLAIMS.
           </Text>
         </View>
 
-        {/* IV. FINANCIAL & LIABILITY (NEW) */}
+        {/* IV. CONFIDENTIALITY (NDA) - REINFORCED */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>IV. Financial & Liability Disclosures</Text>
-          <Text style={styles.boldLegalText}>NON-REFUNDABLE PAYMENTS & NO-REFUND POLICY:</Text>
+          <Text style={styles.sectionTitle}>IV. Non-Disclosure & Confidentiality (NDA)</Text>
           <Text style={styles.legalText}>
-            ALL PAYMENTS, FEES, AND DEPOSITS MADE TO IDOL JOSE GROUP LLC ARE STRICTLY NON-REFUNDABLE. ONCE THE SELECTION PROTOCOL OR PRODUCTION PHASE HAS COMMENCED, NO REFUNDS, CREDITS, OR EXCHANGES SHALL BE ISSUED UNDER ANY CIRCUMSTANCES, INCLUDING BUT NOT LIMITED TO VOLUNTARY WITHDRAWAL, DISQUALIFICATION, OR FORCE MAJEURE.
+            THE UNDERSIGNED ACKNOWLEDGES THAT DURING THE ENGAGEMENT, THEY WILL HAVE ACCESS TO CONFIDENTIAL INFORMATION, INCLUDING BUT NOT LIMITED TO: TRADE SECRETS, UNRELEASED DESIGNS, CLIENT DATABASES, LOGISTICS, AND PRODUCTION STRATEGIES. 
           </Text>
-          <Text style={styles.boldLegalText}>LIMITATION OF LIABILITY & INDEMNIFICATION:</Text>
           <Text style={styles.legalText}>
-            IDOL JOSE GROUP LLC, ITS AFFILIATES, AND REPRESENTATIVES SHALL NOT BE HELD LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING PERSONAL INJURY OR PROPERTY LOSS, ARISING DURING THE PERFORMANCE OF SERVICES OR PARTICIPATION IN EVENTS. THE UNDERSIGNED AGREES TO INDEMNIFY AND HOLD HARMLESS THE COMPANY FROM ALL THIRD-PARTY CLAIMS.
+            THE UNDERSIGNED AGREES TO MAINTAIN ABSOLUTE CONFIDENTIALITY AND NOT TO DISCLOSE, REPRODUCE, OR DISTRIBUTE ANY SUCH INFORMATION TO THIRD PARTIES OR VIA SOCIAL MEDIA WITHOUT EXPRESS WRITTEN CONSENT FROM IDOL JOSE GROUP LLC. BREACH OF THIS CLAUSE SHALL ENTITLE THE COMPANY TO SEEK IMMEDIATE INJUNCTIVE RELIEF AND LIQUIDATED DAMAGES.
           </Text>
         </View>
 
