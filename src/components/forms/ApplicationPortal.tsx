@@ -17,18 +17,20 @@ const ROLES = [
 
 import { useSearchParams } from 'next/navigation'
 
-export const ApplicationPortal = () => {
+export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: string }) => {
   const searchParams = useSearchParams()
   const [role, setRole] = useState<string | null>(null)
   const [step, setStep] = useState(0) // 0: Select Role, 1: Details, 2: Signature, 3: Success
 
   React.useEffect(() => {
-    const defaultRole = searchParams.get('role')
-    if (defaultRole && ROLES.find(r => r.id === defaultRole)) {
-      setRole(defaultRole)
+    const roleFromQuery = searchParams.get('role')
+    const finalRole = initialRole || roleFromQuery
+    
+    if (finalRole && ROLES.find(r => r.id === finalRole)) {
+      setRole(finalRole)
       setStep(1) // Jump straight to details
     }
-  }, [searchParams])
+  }, [searchParams, initialRole])
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -122,8 +124,12 @@ export const ApplicationPortal = () => {
             alt="Idol Fashion Logo" 
             className="h-12 md:h-32 mb-3 md:mb-8 object-contain"
           />
-          <h2 className="camera-hud-text mb-1 md:mb-2 tracking-[0.2em] opacity-50 text-[8px] md:text-xs">Where technical precision meets high-fashion evolution.</h2>
-          <h3 className="big-text brand-text text-lg md:text-5xl lg:text-7xl px-4">The industry&apos;s premier development incubator.</h3>
+          <h2 className="camera-hud-text mb-1 md:mb-2 tracking-[0.2em] opacity-50 text-[8px] md:text-xs">
+            {role ? `PROTOCOL: ${role.toUpperCase()}_INTAKE` : 'Where technical precision meets high-fashion evolution.'}
+          </h2>
+          <h3 className="big-text brand-text text-lg md:text-5xl lg:text-7xl px-4 uppercase">
+            {role ? `${role} admission` : "The industry's premier development incubator."}
+          </h3>
         </div>
 
         <div className="w-full h-1 bg-white/5 mb-4 md:mb-12 relative">

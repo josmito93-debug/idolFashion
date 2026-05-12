@@ -21,28 +21,28 @@ const QUICK_LINKS = [
     id: 'model',
     label: 'Apply as Model',
     icon: User,
-    href: '/?role=model#apply-section',
+    href: '/apply/model',
     detail: 'Elite Talent Intake Protocol'
   },
   {
     id: 'designer',
     label: 'Apply as Designer',
     icon: PenTool,
-    href: '/?role=designer#apply-section',
+    href: '/apply/designer',
     detail: 'Creative Director Admission'
   },
   {
     id: 'photographer',
     label: 'Media Accreditation',
     icon: Camera,
-    href: '/accreditation',
+    href: '/apply/media',
     detail: 'Visual Press Protocol'
   },
   {
     id: 'staff',
     label: 'Staff & Backstage',
     icon: Scissors,
-    href: '/?role=staff#apply-section',
+    href: '/apply/staff',
     detail: 'Operational Excellence'
   },
   {
