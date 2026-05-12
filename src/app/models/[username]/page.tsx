@@ -31,7 +31,11 @@ const MODEL_DATA = {
   ]
 }
 
-export default function ModelPortfolio({ params }: { params: { username: string } }) {
+import { useParams } from 'next/navigation'
+
+export default function ModelPortfolio() {
+  const params = useParams()
+  const username = params.username as string
   return (
     <main className="min-h-screen bg-brand-secondary text-white selection:bg-accent">
       {/* 1. CLOSE-UP HERO */}
