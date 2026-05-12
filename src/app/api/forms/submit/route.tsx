@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       }
 
       // 2. Get Logo as Base64 for the PDF
-      const logoPath = path.join(process.cwd(), 'public/assets/logo.png')
+      const logoPath = path.join(process.cwd(), 'public/assets/logo-pdf.png')
       if (fs.existsSync(logoPath)) {
         logoBase64 = `data:image/png;base64,${fs.readFileSync(logoPath).toString('base64')}`
       }

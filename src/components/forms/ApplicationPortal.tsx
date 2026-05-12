@@ -222,7 +222,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         required 
                         value={formData.fullName}
                         onChange={(e) => updateField('fullName', e.target.value)}
-                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                       />
                     </div>
                     <div className="flex flex-col">
@@ -232,7 +232,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         required 
                         value={formData.idNumber}
                         onChange={(e) => updateField('idNumber', e.target.value)}
-                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                         placeholder="ID NUMBER"
                       />
                     </div>
@@ -266,7 +266,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         required 
                         value={formData.email}
                         onChange={(e) => updateField('email', e.target.value)}
-                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                       />
                     </div>
                     <div className="flex flex-col">
@@ -276,7 +276,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         required 
                         value={formData.phone}
                         onChange={(e) => updateField('phone', e.target.value)}
-                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                       />
                     </div>
                     
@@ -288,7 +288,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                          placeholder="@handle or url" 
                          value={formData.portfolio}
                          onChange={(e) => updateField('portfolio', e.target.value)}
-                         className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                         className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                        />
                     </div>
 
@@ -301,7 +301,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                             required 
                             value={formData.address}
                             onChange={(e) => updateField('address', e.target.value)}
-                            className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                            className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                           />
                         </div>
                         <div className="grid grid-cols-2 gap-4 md:col-span-2">
@@ -312,7 +312,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                                required 
                                value={formData.cityState}
                                onChange={(e) => updateField('cityState', e.target.value)}
-                               className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                               className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                              />
                            </div>
                            <div className="flex flex-col">
@@ -322,7 +322,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                                required 
                                value={formData.zip}
                                onChange={(e) => updateField('zip', e.target.value)}
-                               className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                               className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none" 
                              />
                            </div>
                         </div>
@@ -350,7 +350,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                               type="text" 
                               value={(formData.measurements as any)[f.n]}
                               onChange={(e) => updateMeasurement(f.n, e.target.value)}
-                              className="bg-white/5 border border-white/10 p-2 font-mono text-xs focus:border-accent outline-none" 
+                              className="bg-white/5 border border-white/10 p-2 font-mono text-base focus:border-accent outline-none" 
                             />
                           </div>
                         ))}
@@ -392,7 +392,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                         placeholder="Highlight previous projects... / Proyectos anteriores destacados..." 
                         value={formData.experienceDetails}
                         onChange={(e) => updateField('experienceDetails', e.target.value)}
-                        className="mt-4 bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none h-24"
+                        className="mt-4 bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none h-24"
                      />
                   </div>
 
@@ -402,7 +402,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole }: { defaultRole?: 
                       <select 
                         value={formData.fiscalStatus}
                         onChange={(e) => updateField('fiscalStatus', e.target.value)}
-                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none w-full"
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-base focus:border-accent outline-none w-full"
                       >
                         <option value="contractor">Option A: Contractor (W-9 required)</option>
                         <option value="volunteer">Option B: Voluntario (Learning/Networking)</option>

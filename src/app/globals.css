@@ -33,6 +33,13 @@
     text-transform: uppercase;
   }
 
+  /* Prevent auto-zoom on iOS */
+  input, 
+  select, 
+  textarea {
+    font-size: 16px !important;
+  }
+
   /* Grain/Noise Overlay */
   body::after {
     content: "";
