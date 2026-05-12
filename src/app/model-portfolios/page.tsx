@@ -60,7 +60,7 @@ export default function ModelPortfoliosSales() {
       <CameraHUD />
       
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video 
@@ -68,51 +68,52 @@ export default function ModelPortfoliosSales() {
             muted 
             loop 
             playsInline 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-30"
           >
             <source src="/videos/hero-model-portfolios.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-brand-secondary/60 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-brand-secondary/80 backdrop-blur-[2px]" />
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center translate-y-[10px] md:translate-y-0">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
           <motion.img 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             src="/assets/logo.png" 
             alt="Idol Fashion Logo" 
-            className="h-10 md:h-24 mb-5 md:mb-8 object-contain mt-[-90px] md:mt-0"
+            className="h-12 md:h-20 mb-8 md:mb-12 object-contain"
           />
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none border border-accent/20 bg-accent/5 mb-4"
+            transition={{ delay: 0.3 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-accent/30 bg-accent/10 mb-6"
           >
             <Zap className="w-3 h-3 text-accent" />
-            <span className="camera-hud-text text-[10px] tracking-[0.2em] uppercase text-accent">Professional Infrastructure</span>
+            <span className="camera-hud-text text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-accent">Infrastructure Protocol</span>
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="text-[64px] md:text-[100px] brand-text leading-[0.8] mb-8 uppercase tracking-tighter pt-2 pb-1"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            className="text-[42px] sm:text-[60px] md:text-[80px] lg:text-[100px] brand-text leading-[0.9] mb-8 uppercase tracking-tighter max-w-5xl"
           >
-            OWN YOUR IDENTITY. <br/><span className="text-accent">SCALE YOUR CAREER.</span>
+            OWN YOUR IDENTITY. <br/>
+            <span className="text-accent">SCALE YOUR CAREER.</span>
           </motion.h1>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-            className="flex flex-col items-center mt-2 mb-4"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            className="max-w-2xl mb-12"
           >
-            <p className="detail-text text-[16px] md:text-base opacity-40 uppercase tracking-[0.3em] text-center scale-[0.65] md:scale-100 origin-center leading-relaxed">
-              TECHNICAL INFRASTRUCTURE FOR THE ELITE MODEL.<br className="md:hidden" /> 
-              SCALE YOUR BRAND WITH SURGICAL PRECISION.<br className="md:hidden" /> 
+            <p className="detail-text text-[11px] md:text-xs opacity-50 uppercase tracking-[0.4em] leading-[2] text-center">
+              TECHNICAL INFRASTRUCTURE FOR THE ELITE MODEL.<br className="hidden md:block" /> 
+              SCALE YOUR BRAND WITH SURGICAL PRECISION.<br className="hidden md:block" /> 
               OWN YOUR DATA, OWN YOUR FUTURE.
             </p>
           </motion.div>
@@ -120,25 +121,33 @@ export default function ModelPortfoliosSales() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center mt-4"
+            transition={{ delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-stretch sm:items-center w-full max-w-[320px] sm:max-w-none px-4"
           >
             <Link 
               href="/register" 
-              className="px-10 py-5 bg-white text-black font-modal text-xs tracking-[0.3em] uppercase hover:border-accent/30 transition-all duration-300 detail-text relative overflow-hidden group shadow-sm flex items-center justify-center min-w-[280px]"
+              className="px-8 py-5 bg-white text-black font-modal text-[10px] tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all duration-500 detail-text relative overflow-hidden group shadow-lg flex items-center justify-center sm:min-w-[280px]"
             >
-              <span className="relative z-10">Launch Your Elite Identity</span>
+              <span className="relative z-10">Launch Your Identity</span>
               <StadiumWaveGrid />
             </Link>
             
             <Link 
               href="/models/valeria-cannavo" 
-              className="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white font-modal text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 min-w-[280px] justify-center"
+              className="px-8 py-5 bg-white/5 backdrop-blur-xl border border-white/20 text-white font-modal text-[10px] tracking-[0.3em] uppercase hover:bg-white/10 transition-all group flex items-center gap-3 sm:min-w-[280px] justify-center"
             >
-              <span>View Live Case Study</span>
+              <span>View Case Study</span>
               <Globe2 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             </Link>
           </motion.div>
+        </div>
+
+        {/* HUD Elements for Polish */}
+        <div className="absolute bottom-10 left-10 hidden lg:block opacity-20">
+          <div className="camera-hud-text text-[8px] uppercase tracking-[0.5em] vertical-text">MODEL_PROTOCOL_V2.0</div>
+        </div>
+        <div className="absolute bottom-10 right-10 hidden lg:block opacity-20">
+          <div className="camera-hud-text text-[8px] uppercase tracking-[0.5em] vertical-text">MIAMI_LAB_COORD_25.8</div>
         </div>
       </section>
 
