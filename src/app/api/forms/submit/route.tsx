@@ -6,7 +6,7 @@ import { ApplicationPDF } from '@/components/forms/ApplicationPDF'
 import fs from 'fs'
 import path from 'path'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,6 +31,11 @@ export async function POST(req: NextRequest) {
     const pdfBuffer = await renderToBuffer(<ApplicationPDF data={data} ownerSignature={ownerSignature} />)
 
     // Send Email via Resend
+    if (!resend) {
+      console.error('Resend API Key is missing')
+      return NextResponse.json({ message: 'Email service unconfigured' }, { status: 500 })
+    }
+
     const { data: emailData, error } = await resend.emails.send({
       from: 'Idol Fashion HQ <registrations@idolfashion.miami>', // This should be a verified domain in Resend
       to: [data.email, 'jose@idolfashion.miami'], // Send to candidate and HQ
