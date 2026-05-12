@@ -18,17 +18,26 @@ export async function POST(req: NextRequest) {
 
     // Generate PDF Buffer
     let ownerSignature = undefined
+    let logoBase64 = undefined
+
     try {
+      // 1. Get Owner Signature
       const SIGNATURE_PATH = path.join(process.cwd(), 'src/lib/owner-signature.json')
       if (fs.existsSync(SIGNATURE_PATH)) {
         const sigFile = fs.readFileSync(SIGNATURE_PATH, 'utf8')
         ownerSignature = JSON.parse(sigFile).signature
       }
+
+      // 2. Get Logo as Base64 for the PDF
+      const logoPath = path.join(process.cwd(), 'public/assets/logo.png')
+      if (fs.existsSync(logoPath)) {
+        logoBase64 = `data:image/png;base64,${fs.readFileSync(logoPath).toString('base64')}`
+      }
     } catch (e) {
-      console.warn('Owner signature read failed:', e)
+      console.warn('PDF asset preparation failed:', e)
     }
 
-    const pdfBuffer = await renderToBuffer(<ApplicationPDF data={data} ownerSignature={ownerSignature} />)
+    const pdfBuffer = await renderToBuffer(<ApplicationPDF data={data} ownerSignature={ownerSignature} logoBase64={logoBase64} />)
 
     // Send Email via Resend
     if (!resend) {

@@ -1,26 +1,24 @@
 import React from 'react'
-import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer'
-
-// Register fonts if needed, but standard ones are fine for a contract
-// Font.register({ family: 'Helvetica', src: '...' });
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer'
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    padding: 50,
     backgroundColor: '#ffffff',
     fontFamily: 'Helvetica',
   },
   header: {
-    marginBottom: 20,
-    borderBottomWidth: 2,
-    borderBottomColor: '#e831e3',
-    paddingBottom: 10,
+    marginBottom: 30,
+    borderBottomWidth: 1,
+    borderBottomColor: '#000000',
+    paddingBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   logo: {
-    width: 100,
+    width: 80,
+    height: 'auto',
   },
   title: {
     fontSize: 24,
@@ -36,77 +34,88 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   section: {
-    margin: 10,
-    padding: 10,
+    marginBottom: 15,
   },
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: 'bold',
-    color: '#e831e3',
-    marginBottom: 10,
+    color: '#000000',
+    backgroundColor: '#f5f5f5',
+    padding: 4,
+    marginBottom: 8,
     textTransform: 'uppercase',
-    borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
-    paddingBottom: 5,
   },
   row: {
     flexDirection: 'row',
     marginBottom: 5,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#eeeeee',
+    paddingBottom: 2,
   },
   label: {
-    width: 150,
-    fontSize: 10,
+    width: 140,
+    fontSize: 8,
     fontWeight: 'bold',
     color: '#333333',
+    textTransform: 'uppercase',
   },
   value: {
-    fontSize: 10,
+    fontSize: 9,
     color: '#000000',
     flex: 1,
   },
   legalText: {
     fontSize: 8,
-    color: '#666666',
-    marginTop: 20,
-    lineHeight: 1.5,
+    color: '#333333',
+    marginTop: 5,
+    lineHeight: 1.4,
     textAlign: 'justify',
   },
+  boldLegalText: {
+    fontSize: 8,
+    fontWeight: 'bold',
+    color: '#000000',
+    marginTop: 5,
+    textTransform: 'uppercase',
+  },
   signatureContainer: {
-    marginTop: 40,
-    paddingTop: 20,
-    borderTopWidth: 1,
-    borderTopColor: '#cccccc',
+    marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: 40,
   },
   signatureBox: {
-    width: 200,
+    flex: 1,
     alignItems: 'center',
   },
   signatureImage: {
-    width: 150,
-    height: 60,
+    width: 130,
+    height: 45,
     marginBottom: 5,
+    objectFit: 'contain',
   },
-  signatureLabel: {
-    fontSize: 10,
-    fontWeight: 'bold',
+  signatureLine: {
     borderTopWidth: 1,
     borderTopColor: '#000000',
-    paddingTop: 5,
     width: '100%',
-    textAlign: 'center',
+    paddingTop: 5,
+    alignItems: 'center',
+  },
+  signatureLabel: {
+    fontSize: 8,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   footer: {
     position: 'absolute',
     bottom: 30,
-    left: 40,
-    right: 40,
-    fontSize: 8,
+    left: 50,
+    right: 50,
+    fontSize: 7,
     color: '#999999',
     textAlign: 'center',
-    borderTopWidth: 1,
-    borderTopColor: '#f0f0f0',
+    borderTopWidth: 0.5,
+    borderTopColor: '#dddddd',
     paddingTop: 10,
   }
 })
@@ -114,99 +123,126 @@ const styles = StyleSheet.create({
 interface ApplicationPDFProps {
   data: any
   ownerSignature?: string
+  logoBase64?: string
 }
 
-export const ApplicationPDF = ({ data, ownerSignature }: ApplicationPDFProps) => {
+export const ApplicationPDF = ({ data, ownerSignature, logoBase64 }: ApplicationPDFProps) => {
   const isAccreditation = data.formType === 'accreditation'
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
   
   return (
-    <Document>
+    <Document title={`Contract - ${data.fullName}`}>
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
           <View>
             <Text style={styles.title}>IDOL FASHION</Text>
             <Text style={styles.subtitle}>
-              {isAccreditation ? 'Media Accreditation Protocol' : 'Elite Development Protocol'} // ID: {data.contractId || 'PENDING'}
+              {isAccreditation ? 'Media Accreditation Protocol' : 'Elite Development Protocol'}
             </Text>
+            <Text style={{ fontSize: 7, color: '#999', marginTop: 5 }}>REF: {data.contractId || 'AUTO-GEN-2026'}</Text>
           </View>
+          {logoBase64 && <Image src={logoBase64} style={styles.logo} />}
         </View>
 
-        {/* Candidate Information */}
+        <View style={{ marginBottom: 20, textAlign: 'center' }}>
+          <Text style={{ fontSize: 14, fontWeight: 'bold', textTransform: 'uppercase' }}>
+            {isAccreditation ? 'Official Media Accreditation Agreement' : 'Master Services & Talent Agreement'}
+          </Text>
+        </View>
+
+        {/* I. PARTIES */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{isAccreditation ? 'Media Identity' : 'Candidate Profile'}</Text>
-          <View style={styles.row}><Text style={styles.label}>Full Name:</Text><Text style={styles.value}>{data.fullName}</Text></View>
-          <View style={styles.row}><Text style={styles.label}>Email:</Text><Text style={styles.value}>{data.email}</Text></View>
-          {data.phone && <View style={styles.row}><Text style={styles.label}>Phone:</Text><Text style={styles.value}>{data.phone}</Text></View>}
-          {data.dob && <View style={styles.row}><Text style={styles.label}>DOB:</Text><Text style={styles.value}>{data.dob}</Text></View>}
-          <View style={styles.row}><Text style={styles.label}>Portfolio/Social:</Text><Text style={styles.value}>{data.portfolio}</Text></View>
-          {!isAccreditation && <View style={styles.row}><Text style={styles.label}>Role Applied:</Text><Text style={styles.value}>{data.role}</Text></View>}
+          <Text style={styles.sectionTitle}>I. Identification of Parties</Text>
+          <View style={styles.row}><Text style={styles.label}>Legal Name:</Text><Text style={styles.value}>{data.fullName}</Text></View>
+          <View style={styles.row}><Text style={styles.label}>Email Address:</Text><Text style={styles.value}>{data.email}</Text></View>
+          {data.phone && <View style={styles.row}><Text style={styles.label}>Contact Phone:</Text><Text style={styles.value}>{data.phone}</Text></View>}
+          <View style={styles.row}><Text style={styles.label}>Industry Role:</Text><Text style={styles.value}>{isAccreditation ? 'MEDIA / PRESS' : (data.role || 'TALENT').toUpperCase()}</Text></View>
         </View>
 
-        {/* Measurements (if model) */}
+        {/* II. PHYSICAL DATA (If model) */}
         {!isAccreditation && data.role === 'model' && data.measurements && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Measurements & Physical Profile</Text>
+            <Text style={styles.sectionTitle}>II. Talent Specifications</Text>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Height: {data.measurements.height}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Shoe: {data.measurements.shoe}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Size: {data.measurements.size}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Eyes: {data.measurements.eyes}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Bust: {data.measurements.bust}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Waist: {data.measurements.waist}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Hips: {data.measurements.hips}</Text></View>
-              <View style={{ width: '50%', marginBottom: 5 }}><Text style={styles.label}>Hair: {data.measurements.hair}</Text></View>
+              {[
+                { l: 'Height', v: data.measurements.height },
+                { l: 'Shoe', v: data.measurements.shoe },
+                { l: 'Size', v: data.measurements.size },
+                { l: 'Eyes', v: data.measurements.eyes },
+                { l: 'Bust', v: data.measurements.bust },
+                { l: 'Waist', v: data.measurements.waist },
+                { l: 'Hips', v: data.measurements.hips },
+                { l: 'Hair', v: data.measurements.hair },
+              ].map((m) => (
+                <View key={m.l} style={{ width: '25%', marginBottom: 5 }}>
+                  <Text style={{ fontSize: 6, color: '#666', textTransform: 'uppercase' }}>{m.l}</Text>
+                  <Text style={{ fontSize: 8, fontWeight: 'bold' }}>{m.v || 'N/A'}</Text>
+                </View>
+              ))}
             </View>
           </View>
         )}
 
-        {/* Experience / Additional Info */}
-        {!isAccreditation && (
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Experience & Background</Text>
-            <View style={styles.row}><Text style={styles.label}>Previous Experience:</Text><Text style={styles.value}>{data.experience}</Text></View>
-            <Text style={{ fontSize: 10, marginTop: 5 }}>Details:</Text>
-            <Text style={{ fontSize: 9, color: '#444444', marginTop: 2 }}>{data.experienceDetails || 'None provided'}</Text>
-          </View>
-        )}
-
-        {/* Legal Terms */}
+        {/* III. TERMS */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Terms & Conditions</Text>
+          <Text style={styles.sectionTitle}>III. Terms of Engagement</Text>
           <Text style={styles.legalText}>
             {isAccreditation 
-              ? "The photographer/media representative agrees to maintain strict confidentiality regarding any collections, designs, or restricted areas. Real-time publication of backstage material is prohibited. Official tags and credits are required for all event coverage."
-              : (data.role === 'model' 
-                ? "I hereby grant IDOL JOSE GROUP LLC (IDOL FASHION / DORAL FASHION WEEK) the irrevocable right to use my image, voice, and name for promotional purposes. I understand that this relationship is as an independent contractor and not as an employee. I agree to the confidentiality terms and the no-show policy as outlined in the application portal."
-                : "I agree to provide professional collaboration services to IDOL JOSE GROUP LLC. I commit to maintaining strict confidentiality regarding internal logistics, client databases, and designs. I authorize the use of my image for promotional purposes related to the events.")
+              ? "The Media Representative agrees to maintain strict confidentiality regarding all unreleased collections and production logistics. Unauthorized backstage documentation or real-time broadcasting of restricted areas is prohibited. Full credit to IDOL JOSE GROUP LLC is required for all published material."
+              : "The Talent/Contractor grants IDOL JOSE GROUP LLC irrevocable rights to use their image and likeness for promotional purposes. Talent acknowledges status as an Independent Contractor. Strict compliance with the 'No-Show' policy and confidentiality protocols is a mandatory condition of this Agreement."
             }
           </Text>
         </View>
 
-        {/* Signatures */}
+        {/* IV. FINANCIAL & LIABILITY (NEW) */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>IV. Financial & Liability Disclosures</Text>
+          <Text style={styles.boldLegalText}>NON-REFUNDABLE PAYMENTS & NO-REFUND POLICY:</Text>
+          <Text style={styles.legalText}>
+            ALL PAYMENTS, FEES, AND DEPOSITS MADE TO IDOL JOSE GROUP LLC ARE STRICTLY NON-REFUNDABLE. ONCE THE SELECTION PROTOCOL OR PRODUCTION PHASE HAS COMMENCED, NO REFUNDS, CREDITS, OR EXCHANGES SHALL BE ISSUED UNDER ANY CIRCUMSTANCES, INCLUDING BUT NOT LIMITED TO VOLUNTARY WITHDRAWAL, DISQUALIFICATION, OR FORCE MAJEURE.
+          </Text>
+          <Text style={styles.boldLegalText}>LIMITATION OF LIABILITY & INDEMNIFICATION:</Text>
+          <Text style={styles.legalText}>
+            IDOL JOSE GROUP LLC, ITS AFFILIATES, AND REPRESENTATIVES SHALL NOT BE HELD LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING PERSONAL INJURY OR PROPERTY LOSS, ARISING DURING THE PERFORMANCE OF SERVICES OR PARTICIPATION IN EVENTS. THE UNDERSIGNED AGREES TO INDEMNIFY AND HOLD HARMLESS THE COMPANY FROM ALL THIRD-PARTY CLAIMS.
+          </Text>
+        </View>
+
+        {/* V. SIGNATURES */}
         <View style={styles.signatureContainer}>
           <View style={styles.signatureBox}>
             {data.signature && <Image src={data.signature} style={styles.signatureImage} />}
-            <Text style={styles.signatureLabel}>Candidate Signature</Text>
-            <Text style={{ fontSize: 8, marginTop: 5 }}>Date: {new Date().toLocaleDateString()}</Text>
+            <View style={styles.signatureLine}>
+              <Text style={styles.signatureLabel}>Candidate Signature</Text>
+              <Text style={{ fontSize: 7, marginTop: 2 }}>{data.fullName}</Text>
+            </View>
           </View>
+          
           <View style={styles.signatureBox}>
             {ownerSignature ? (
               <Image src={ownerSignature} style={styles.signatureImage} />
             ) : (
-              <View style={{ height: 60 }} />
+              <View style={{ height: 45, justifyContent: 'center' }}>
+                <Text style={{ fontSize: 7, color: '#999', fontStyle: 'italic' }}>Authorized Electronic Signature</Text>
+              </View>
             )}
-            <Text style={styles.signatureLabel}>Authorized Representative</Text>
-            <Text style={{ fontSize: 8, marginTop: 5 }}>IDOL JOSE GROUP LLC (Idolfredo)</Text>
+            <View style={styles.signatureLine}>
+              <Text style={styles.signatureLabel}>Authorized Representative</Text>
+              <Text style={{ fontSize: 7, marginTop: 2 }}>IDOL JOSE GROUP LLC (Idolfredo)</Text>
+            </View>
           </View>
         </View>
 
         {/* Footer */}
-        <Text style={styles.footer}>
-          IDOL JOSE GROUP LLC // MIAMI, FL // IDOL-PROTOCOL-2026
-        </Text>
+        <View style={styles.footer}>
+          <Text>IDOL JOSE GROUP LLC // MIAMI DESIGN DISTRICT // DORAL, FL</Text>
+          <Text style={{ marginTop: 2 }}>Digitally Certified & Secured via IDOL-HUB on {currentDate}</Text>
+        </View>
       </Page>
     </Document>
   )
 }
-
