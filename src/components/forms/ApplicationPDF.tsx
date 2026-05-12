@@ -9,26 +9,25 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 30,
-    borderBottomWidth: 1,
-    borderBottomColor: '#000000',
-    paddingBottom: 20,
+    backgroundColor: '#000000',
+    padding: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   logo: {
-    width: 80,
+    width: 100,
     height: 'auto',
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#000000',
+    color: '#ffffff',
     textTransform: 'uppercase',
   },
   subtitle: {
-    fontSize: 10,
-    color: '#666666',
+    fontSize: 9,
+    color: '#cccccc',
     marginTop: 5,
     textTransform: 'uppercase',
     letterSpacing: 1,
@@ -144,7 +143,7 @@ export const ApplicationPDF = ({ data, ownerSignature, logoBase64 }: Application
             <Text style={styles.subtitle}>
               {isAccreditation ? 'Media Accreditation Protocol' : 'Elite Development Protocol'}
             </Text>
-            <Text style={{ fontSize: 7, color: '#999', marginTop: 5 }}>REF: {data.contractId || 'AUTO-GEN-2026'}</Text>
+            <Text style={{ fontSize: 7, color: '#cccccc', marginTop: 5 }}>REF: {data.contractId || 'AUTO-GEN-2026'}</Text>
           </View>
           {logoBase64 && <Image src={logoBase64} style={styles.logo} />}
         </View>
