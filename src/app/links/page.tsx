@@ -84,7 +84,7 @@ export default function QuickLinksPage() {
           </motion.div>
           <div className="space-y-2">
             <h1 className="brand-text text-5xl uppercase tracking-tighter leading-none">Quick Protocol</h1>
-            <p className="camera-hud-text text-[9px] tracking-[0.5em] opacity-40 uppercase">Idol Fashion Hub // Link Tree</p>
+            <p className="camera-hud-text text-[9px] tracking-[0.5em] opacity-40 uppercase">Idol Fashion Hub // Elite Access</p>
           </div>
         </div>
 
@@ -136,7 +136,7 @@ export default function QuickLinksPage() {
           <div className="flex justify-center gap-10 opacity-10">
             <div className="camera-hud-text text-[7px]">ENCRYPTION: AES-256</div>
             <div className="camera-hud-text text-[7px]">NODE: MIAMI_LAB_01</div>
-            <div className="camera-hud-text text-[7px]">LINK_TREE: ACTIVE</div>
+            <div className="camera-hud-text text-[7px]">ACCESS: ELITE_PROTOCOL</div>
           </div>
         </div>
       </div>
