@@ -8,14 +8,42 @@ import { CameraHUD } from '@/components/hero/CameraHUD'
 export default function AccreditationPage() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    portfolio: ''
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'accreditation',
+          role: 'media',
+          contractId: `MEDIA-AC-2026-${Math.floor(Math.random() * 10000)}`
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        const err = await response.json()
+        alert(`Error: ${err.message || 'Submission failed'}`)
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      alert('Failed to submit accreditation. Please try again.')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1500)
+    }
   }
 
   if (submitted) {
@@ -82,6 +110,8 @@ export default function AccreditationPage() {
                   <input 
                     type="text" 
                     required
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl py-4 px-6 camera-hud-text text-[10px] tracking-widest focus:border-accent/40 focus:outline-none transition-all"
                     placeholder="NAME // IDENTITY"
                   />
@@ -91,6 +121,8 @@ export default function AccreditationPage() {
                   <input 
                     type="email" 
                     required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl py-4 px-6 camera-hud-text text-[10px] tracking-widest focus:border-accent/40 focus:outline-none transition-all"
                     placeholder="EMAIL@PROTOCOL.COM"
                   />
@@ -104,11 +136,14 @@ export default function AccreditationPage() {
                   <input 
                     type="url" 
                     required
+                    value={formData.portfolio}
+                    onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-6 camera-hud-text text-[10px] tracking-widest focus:border-accent/40 focus:outline-none transition-all"
                     placeholder="WWW.PORTFOLIO.COM / @USERNAME"
                   />
                 </div>
               </div>
+
 
               <div className="space-y-4 pt-4">
                 <label className="flex items-start gap-3 cursor-pointer group">

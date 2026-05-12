@@ -7,28 +7,61 @@ import confetti from 'canvas-confetti'
 
 interface SignatureSectionProps {
   role: string
+  formData: any
   onComplete: () => void
 }
 
-export const SignatureSection = ({ role, onComplete }: SignatureSectionProps) => {
+export const SignatureSection = ({ role, formData, onComplete }: SignatureSectionProps) => {
   const sigCanvas = useRef<SignatureCanvas | null>(null)
   const [signed, setSigned] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const clear = () => {
     sigCanvas.current?.clear()
     setSigned(false)
   }
 
-  const save = () => {
-    if (sigCanvas.current?.isEmpty()) return
-    setSigned(true)
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#ffffff', '#e831e3', '#000000']
-    })
-    setTimeout(onComplete, 1500)
+  const save = async () => {
+    if (sigCanvas.current?.isEmpty()) {
+      alert('Please provide a signature.')
+      return
+    }
+    
+    setIsSubmitting(true)
+    const signatureData = sigCanvas.current?.getTrimmedCanvas().toDataURL('image/png')
+    
+    try {
+      const response = await fetch('/api/forms/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          role,
+          signature: signatureData,
+          contractId: `ELITE-LAB-2026-${Math.floor(Math.random() * 10000)}`
+        }),
+      })
+
+      if (response.ok) {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#ffffff', '#e831e3', '#000000']
+        })
+        setTimeout(onComplete, 1500)
+      } else {
+        const err = await response.json()
+        alert(`Error submitting application: ${err.message || 'Unknown error'}`)
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      alert('Failed to submit application. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -85,18 +118,21 @@ export const SignatureSection = ({ role, onComplete }: SignatureSectionProps) =>
         <div className="flex gap-4 w-full mt-6">
           <button 
             onClick={clear}
-            className="flex-1 py-3 border border-white/10 font-mono text-xs uppercase tracking-widest hover:bg-white/10 transition-all"
+            disabled={isSubmitting}
+            className="flex-1 py-3 border border-white/10 font-mono text-xs uppercase tracking-widest hover:bg-white/10 transition-all disabled:opacity-50"
           >
             Clear
           </button>
           <button 
             onClick={save}
-            className="flex-1 py-3 bg-white text-black font-mono text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold"
+            disabled={isSubmitting}
+            className="flex-1 py-3 bg-white text-black font-mono text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition-all font-bold disabled:opacity-50"
           >
-            Authorize & Submit
+            {isSubmitting ? 'Processing...' : 'Authorize & Submit'}
           </button>
         </div>
       </div>
     </div>
   )
 }
+

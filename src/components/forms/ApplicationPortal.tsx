@@ -15,15 +15,86 @@ const ROLES = [
   { id: 'sponsor', label: 'Sponsor', icon: Briefcase, description: 'Strategic industry partner' },
 ]
 
+import { useSearchParams } from 'next/navigation'
+
 export const ApplicationPortal = () => {
+  const searchParams = useSearchParams()
   const [role, setRole] = useState<string | null>(null)
   const [step, setStep] = useState(0) // 0: Select Role, 1: Details, 2: Signature, 3: Success
+
+  React.useEffect(() => {
+    const defaultRole = searchParams.get('role')
+    if (defaultRole && ROLES.find(r => r.id === defaultRole)) {
+      setRole(defaultRole)
+      setStep(1) // Jump straight to details
+    }
+  }, [searchParams])
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    dob: '',
+    age: '',
+    email: '',
+    phone: '',
+    portfolio: '',
+    address: '',
+    cityState: '',
+    zip: '',
+    experience: '',
+    experienceDetails: '',
+    measurements: {
+      height: '',
+      shoe: '',
+      size: '',
+      eyes: '',
+      bust: '',
+      waist: '',
+      hips: '',
+      hair: ''
+    },
+    fiscalStatus: 'contractor'
+  })
+
+  const updateField = (field: string, value: any) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const updateMeasurement = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      measurements: { ...prev.measurements, [field]: value }
+    }))
+  }
 
   const handleNext = () => setStep(prev => prev + 1)
   const handleBack = () => setStep(prev => Math.max(0, prev - 1))
   const handleReset = () => {
     setRole(null)
     setStep(0)
+    setFormData({
+      fullName: '',
+      dob: '',
+      age: '',
+      email: '',
+      phone: '',
+      portfolio: '',
+      address: '',
+      cityState: '',
+      zip: '',
+      experience: '',
+      experienceDetails: '',
+      measurements: {
+        height: '',
+        shoe: '',
+        size: '',
+        eyes: '',
+        bust: '',
+        waist: '',
+        hips: '',
+        hair: ''
+      },
+      fiscalStatus: 'contractor'
+    })
   }
 
   return (
@@ -138,47 +209,102 @@ export const ApplicationPortal = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col">
                       <label className="camera-hud-text mb-2">Full Name / Nombre Completo</label>
-                      <input type="text" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                      <input 
+                        type="text" 
+                        required 
+                        value={formData.fullName}
+                        onChange={(e) => updateField('fullName', e.target.value)}
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                      />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                        <div className="flex flex-col">
                          <label className="camera-hud-text mb-2">DOB / Nacimiento</label>
-                         <input type="date" required className="bg-white/5 border border-white/10 p-4 font-mono text-xs focus:border-accent outline-none" />
+                         <input 
+                           type="date" 
+                           required 
+                           value={formData.dob}
+                           onChange={(e) => updateField('dob', e.target.value)}
+                           className="bg-white/5 border border-white/10 p-4 font-mono text-xs focus:border-accent outline-none" 
+                         />
                        </div>
                        <div className="flex flex-col">
                          <label className="camera-hud-text mb-2">Age / Edad</label>
-                         <input type="number" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                         <input 
+                           type="number" 
+                           required 
+                           value={formData.age}
+                           onChange={(e) => updateField('age', e.target.value)}
+                           className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                         />
                        </div>
                     </div>
                     
                     <div className="flex flex-col">
                       <label className="camera-hud-text mb-2">Professional Email</label>
-                      <input type="email" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                      <input 
+                        type="email" 
+                        required 
+                        value={formData.email}
+                        onChange={(e) => updateField('email', e.target.value)}
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                      />
                     </div>
                     <div className="flex flex-col">
                       <label className="camera-hud-text mb-2">Mobile Contact</label>
-                      <input type="tel" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                      <input 
+                        type="tel" 
+                        required 
+                        value={formData.phone}
+                        onChange={(e) => updateField('phone', e.target.value)}
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                      />
                     </div>
                     
                     <div className="flex flex-col md:col-span-2">
                        <label className="camera-hud-text mb-2">Instagram / LinkedIn / Portfolio</label>
-                       <input type="text" required placeholder="@handle or url" className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                       <input 
+                         type="text" 
+                         required 
+                         placeholder="@handle or url" 
+                         value={formData.portfolio}
+                         onChange={(e) => updateField('portfolio', e.target.value)}
+                         className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                       />
                     </div>
 
                     {['staff', 'makeup', 'media'].includes(role || '') && (
                       <>
                         <div className="flex flex-col md:col-span-2">
                           <label className="camera-hud-text mb-2">Home Address / Dirección de Habitación</label>
-                          <input type="text" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                          <input 
+                            type="text" 
+                            required 
+                            value={formData.address}
+                            onChange={(e) => updateField('address', e.target.value)}
+                            className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                          />
                         </div>
                         <div className="grid grid-cols-2 gap-4 md:col-span-2">
                            <div className="flex flex-col">
                              <label className="camera-hud-text mb-2">City/State</label>
-                             <input type="text" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                             <input 
+                               type="text" 
+                               required 
+                               value={formData.cityState}
+                               onChange={(e) => updateField('cityState', e.target.value)}
+                               className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                             />
                            </div>
                            <div className="flex flex-col">
                              <label className="camera-hud-text mb-2">Zip Code</label>
-                             <input type="text" required className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" />
+                             <input 
+                               type="text" 
+                               required 
+                               value={formData.zip}
+                               onChange={(e) => updateField('zip', e.target.value)}
+                               className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none" 
+                             />
                            </div>
                         </div>
                       </>
@@ -201,7 +327,12 @@ export const ApplicationPortal = () => {
                         ].map((f) => (
                           <div key={f.n} className="flex flex-col">
                             <label className="camera-hud-text mb-2 text-[10px]">{f.l}</label>
-                            <input type="text" className="bg-white/5 border border-white/10 p-2 font-mono text-xs focus:border-accent outline-none" />
+                            <input 
+                              type="text" 
+                              value={(formData.measurements as any)[f.n]}
+                              onChange={(e) => updateMeasurement(f.n, e.target.value)}
+                              className="bg-white/5 border border-white/10 p-2 font-mono text-xs focus:border-accent outline-none" 
+                            />
                           </div>
                         ))}
                       </div>
@@ -212,22 +343,36 @@ export const ApplicationPortal = () => {
                      <label className="camera-hud-text mb-4">Past Experience? / Experiencia Previa?</label>
                      <div className="flex gap-8">
                         <label className="flex items-center gap-2 cursor-pointer group">
-                           <input type="radio" name="experience" className="hidden" />
-                           <div className="w-5 h-5 border border-white/20 rounded-full flex items-center justify-center group-hover:border-accent">
-                              <div className="w-2.5 h-2.5 bg-accent rounded-full opacity-0" />
+                           <input 
+                             type="radio" 
+                             name="experience" 
+                             className="hidden" 
+                             checked={formData.experience === 'yes'}
+                             onChange={() => updateField('experience', 'yes')}
+                           />
+                           <div className={`w-5 h-5 border rounded-full flex items-center justify-center group-hover:border-accent ${formData.experience === 'yes' ? 'border-accent' : 'border-white/20'}`}>
+                              <div className={`w-2.5 h-2.5 bg-accent rounded-full ${formData.experience === 'yes' ? 'opacity-100' : 'opacity-0'}`} />
                            </div>
                            <span className="font-mono text-xs uppercase">Yes / Si</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer group">
-                           <input type="radio" name="experience" className="hidden" />
-                           <div className="w-5 h-5 border border-white/20 rounded-full flex items-center justify-center group-hover:border-accent">
-                              <div className="w-2.5 h-2.5 bg-accent rounded-full opacity-0" />
+                           <input 
+                             type="radio" 
+                             name="experience" 
+                             className="hidden" 
+                             checked={formData.experience === 'no'}
+                             onChange={() => updateField('experience', 'no')}
+                           />
+                           <div className={`w-5 h-5 border rounded-full flex items-center justify-center group-hover:border-accent ${formData.experience === 'no' ? 'border-accent' : 'border-white/20'}`}>
+                              <div className={`w-2.5 h-2.5 bg-accent rounded-full ${formData.experience === 'no' ? 'opacity-100' : 'opacity-0'}`} />
                            </div>
                            <span className="font-mono text-xs uppercase">No</span>
                         </label>
                      </div>
                      <textarea 
                         placeholder="Highlight previous projects... / Proyectos anteriores destacados..." 
+                        value={formData.experienceDetails}
+                        onChange={(e) => updateField('experienceDetails', e.target.value)}
                         className="mt-4 bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none h-24"
                      />
                   </div>
@@ -235,7 +380,11 @@ export const ApplicationPortal = () => {
                   {['staff', 'makeup', 'media'].includes(role || '') && (
                     <div className="flex flex-col pt-6 border-t border-white/10">
                       <label className="camera-hud-text mb-4">Fiscal Status / Estatus Legal-Fiscal</label>
-                      <select className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none w-full">
+                      <select 
+                        value={formData.fiscalStatus}
+                        onChange={(e) => updateField('fiscalStatus', e.target.value)}
+                        className="bg-white/5 border border-white/10 p-4 font-mono text-sm focus:border-accent outline-none w-full"
+                      >
                         <option value="contractor">Option A: Contractor (W-9 required)</option>
                         <option value="volunteer">Option B: Voluntario (Learning/Networking)</option>
                       </select>
@@ -255,9 +404,10 @@ export const ApplicationPortal = () => {
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                >
-                 <SignatureSection role={role || ''} onComplete={handleNext} />
+                 <SignatureSection role={role || ''} formData={formData} onComplete={handleNext} />
                </motion.div>
             )}
+
 
             {step === 3 && (
               <motion.div 

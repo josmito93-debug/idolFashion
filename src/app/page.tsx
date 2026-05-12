@@ -2,6 +2,8 @@ import { Hero } from "@/components/hero/Hero";
 import { ApplicationPortal } from "@/components/forms/ApplicationPortal";
 import { ModelSalesTeaser } from "@/components/marketing/ModelSalesTeaser";
 
+import { Suspense } from "react";
+
 export default function Home() {
   return (
     <main className="relative bg-brand-secondary selection:bg-accent selection:text-white">
@@ -10,7 +12,9 @@ export default function Home() {
 
       {/* Main Content: Intake Lab */}
       <div className="relative z-10 bg-brand-secondary border-t border-white/5">
-        <ApplicationPortal />
+        <Suspense fallback={<div className="h-screen flex items-center justify-center text-white/20">LOADING_PROTOCOL...</div>}>
+          <ApplicationPortal />
+        </Suspense>
       </div>
 
       {/* Professional Model Teaser Section */}
