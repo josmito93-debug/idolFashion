@@ -123,7 +123,7 @@ export default function QuickLinksPage() {
         particleCount: 160,
         spread: 90,
         origin: { y: 0.55 },
-        colors: ['#e831e3', '#ffffff', '#0a0a0a', '#ff3b30']
+        colors: ['#D4AF37', '#ffffff', '#0a0a0a', '#ff3b30']
       })
     })
   }
@@ -175,8 +175,11 @@ export default function QuickLinksPage() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={easeTransition}
-            className="inline-flex p-4 rounded-[2rem] bg-white/5 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] relative"
+            className="inline-flex p-4 rounded-[2rem] bg-black/40 backdrop-blur-xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] relative"
           >
+            {/* Elegant Gold Bezel Fading to Zero Opacity */}
+            <div className="absolute inset-0 rounded-[2rem] border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-40 animate-pulse-slow" />
+            
             <AnimatePresence mode="wait">
               {isUnlocked ? (
                 <motion.div
@@ -231,7 +234,10 @@ export default function QuickLinksPage() {
                 className="space-y-6"
               >
                 {/* LOCKED BANNER STATUS */}
-                <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] flex items-start gap-3">
+                <div className="p-3.5 rounded-xl border border-white/5 bg-black/40 backdrop-blur-md flex items-start gap-3 relative overflow-hidden">
+                  {/* Gold Bezel for Status Alert */}
+                  <div className="absolute inset-0 rounded-xl border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-20" />
+                  
                   <AlertCircle className="w-4 h-4 text-white/30 shrink-0 mt-0.5 animate-pulse" />
                   <div className="space-y-0.5">
                     <p className="camera-hud-text text-[9px] text-white/40 tracking-widest font-bold">
@@ -243,12 +249,13 @@ export default function QuickLinksPage() {
                   </div>
                 </div>
 
-                {/* DOUBLE BEZEL INSTAGRAM AUTHS CHECKLIST CARD */}
-                <div className="p-1 bg-white/5 border border-white/10 rounded-[2rem] shadow-[0_25px_50px_-20px_rgba(0,0,0,0.5)] relative">
-                  {/* Outer Bezel Interior Hairline Accent */}
-                  <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] border border-white/5 pointer-events-none" />
+                {/* DOUBLE BEZEL INSTAGRAM AUTHS CHECKLIST CARD with Glassmorphism and Gold Border */}
+                <div className="p-1.5 bg-white/5 border border-white/10 rounded-[2rem] shadow-[0_25px_50px_-20px_rgba(0,0,0,0.5)] relative">
                   
-                  <div className="bg-[#0b0b0b] rounded-[calc(2rem-4px)] p-6 space-y-5">
+                  {/* Ultra-Premium Rounded Gold Border that Fades to Zero Opacity */}
+                  <div className="absolute inset-0 rounded-[2rem] border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-35" />
+                  
+                  <div className="bg-[#0b0b0b]/80 backdrop-blur-2xl rounded-[calc(2rem-4px)] p-6 space-y-5">
                     
                     {/* Authorization Card Header */}
                     <div className="flex justify-between items-start border-b border-white/5 pb-4">
@@ -279,9 +286,12 @@ export default function QuickLinksPage() {
                         return (
                           <div 
                             key={account.id}
-                            className="flex items-center justify-between p-2.5 bg-white/[0.02] border border-white/[0.03] rounded-xl hover:bg-white/[0.04] transition-all duration-300"
+                            className="relative flex items-center justify-between p-3 bg-black/40 backdrop-blur-md rounded-xl hover:bg-black/50 transition-all duration-300 overflow-hidden"
                           >
-                            <div className="flex items-center gap-3">
+                            {/* Gold fading border per Instagram node item */}
+                            <div className="absolute inset-0 rounded-xl border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-25" />
+                            
+                            <div className="flex items-center gap-3 relative z-10">
                               <span className="camera-hud-text text-[8px] opacity-30 font-mono">
                                 {`0${index + 1}`}
                               </span>
@@ -297,7 +307,7 @@ export default function QuickLinksPage() {
 
                             <button
                               onClick={() => handleFollow(account.id, account.url)}
-                              className={`h-7 px-3 rounded-lg camera-hud-text text-[8px] font-bold tracking-widest transition-all uppercase flex items-center gap-1.5 cursor-pointer active:scale-[0.97] duration-150 ${
+                              className={`h-7 px-3 rounded-lg camera-hud-text text-[8px] font-bold tracking-widest transition-all uppercase flex items-center gap-1.5 cursor-pointer active:scale-[0.97] duration-150 relative z-10 ${
                                 isFollowed 
                                   ? 'bg-accent/10 border border-accent/30 text-accent hover:bg-accent/15'
                                   : 'bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20'
@@ -352,10 +362,13 @@ export default function QuickLinksPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-                  className="p-3.5 rounded-xl border border-accent/30 bg-accent/5 flex items-start gap-3 shadow-[0_4px_20px_rgba(232,49,227,0.1)]"
+                  className="p-3.5 rounded-xl border border-accent/30 bg-black/40 backdrop-blur-md flex items-start gap-3 shadow-[0_4px_20px_rgba(232,49,227,0.15)] relative overflow-hidden"
                 >
+                  {/* Gold Bezel for Status Alert */}
+                  <div className="absolute inset-0 rounded-xl border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-30" />
+
                   <Sparkles className="w-4 h-4 text-accent shrink-0 mt-0.5 animate-spin-slow" />
-                  <div className="space-y-0.5">
+                  <div className="space-y-0.5 relative z-10">
                     <p className="camera-hud-text text-[9px] text-accent tracking-widest font-bold">
                       PROTOCOL_AUTHORIZED // ACCESS_GRANTED
                     </p>
@@ -365,7 +378,7 @@ export default function QuickLinksPage() {
                   </div>
                 </motion.div>
 
-                {/* THE REVEALED LINKS GRID */}
+                {/* THE REVEALED LINKS GRID (with Glassmorphism and fading Gold Border) */}
                 <div className="space-y-3">
                   {QUICK_LINKS.map((link, idx) => (
                     <motion.div
@@ -380,8 +393,11 @@ export default function QuickLinksPage() {
                     >
                       <Link 
                         href={link.href}
-                        className="group relative flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-accent/40 active:scale-[0.98] transition-all overflow-hidden"
+                        className="group relative flex items-center justify-between p-4 bg-black/40 backdrop-blur-md rounded-2xl hover:bg-black/50 active:scale-[0.98] transition-all overflow-hidden"
                       >
+                        {/* Elite Rounded Gold Border that Fades to Zero Opacity */}
+                        <div className="absolute inset-0 rounded-2xl border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-30 group-hover:opacity-55 transition-opacity duration-300" />
+
                         <div className="flex items-center gap-4 relative z-10">
                           <div className="p-3 rounded-xl bg-white/5 border border-white/5 group-hover:bg-accent/15 group-hover:border-accent/30 group-hover:text-accent transition-all duration-300">
                             <link.icon className="w-4 h-4" strokeWidth={1.5} />
@@ -414,7 +430,10 @@ export default function QuickLinksPage() {
                   transition={{ delay: 0.4 }}
                   className="p-1 bg-white/5 border border-white/10 rounded-2xl relative"
                 >
-                  <div className="bg-[#0b0b0b] rounded-[14px] p-3 flex items-center justify-between">
+                  {/* Gold border decoration */}
+                  <div className="absolute inset-0 rounded-2xl border border-transparent [background:linear-gradient(to_bottom_right,#D4AF37,transparent)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,_linear-gradient(#fff_0_0)] [mask-composite:exclude] pointer-events-none opacity-30" />
+
+                  <div className="bg-[#0b0b0b]/90 rounded-[14px] p-3 flex items-center justify-between relative z-10">
                     <div className="flex items-center gap-2.5">
                       <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                       <p className="camera-hud-text text-[8.5px] text-white/50 tracking-widest font-bold">
