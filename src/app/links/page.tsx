@@ -46,6 +46,12 @@ const INSTAGRAM_ACCOUNTS = [
     username: 'dr.juanfcoskincare',
     label: 'Official Skincare Protocol',
     url: 'https://instagram.com/dr.juanfcoskincare'
+  },
+  {
+    id: 'americanhelpcenters',
+    username: 'americanhelpcenters',
+    label: 'American Help Centers',
+    url: 'https://instagram.com/americanhelpcenters'
   }
 ]
 
