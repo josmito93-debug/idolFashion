@@ -52,6 +52,12 @@ const INSTAGRAM_ACCOUNTS = [
     username: 'americanhelpcenters',
     label: 'American Help Centers',
     url: 'https://instagram.com/americanhelpcenters'
+  },
+  {
+    id: 'Themysterymanusa',
+    username: 'Themysterymanusa',
+    label: 'The Mystery Man USA',
+    url: 'https://instagram.com/Themysterymanusa'
   }
 ]
 
